@@ -4,27 +4,37 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Sidekick.Pages</title>
+    <title>Sidekick</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="/css/site.css" rel="stylesheet" />
     <link href="Sidekick.Pages.styles.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div style="height:100%;width:100%;margin:0;position:fixed;">
+            <div class="initialization-loader"></div>
+            <div class="initialization-loader" style="animation-direction:alternate-reverse;animation-duration:4s;"></div>
+            <div class="initialization-loader" style="animation-duration:5s;"></div>
+        </div>
     </div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+        <div class="content">
+            <div>
+                An error has occurred. This application may no longer respond until reloaded.<br />
+                If this issue keeps reoccurring, please open a ticket on our github page.
+            </div>
+
+            <a href="" class="reload">Reload</a>
+        </div>
     </div>
 
     <!-- Start Single Page Apps for GitHub Pages -->
@@ -59,6 +69,7 @@
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
 
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>
