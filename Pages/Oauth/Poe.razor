@@ -1,0 +1,20 @@
+﻿@page "/oauth/poe"
+
+<h1>Loading Sidekick</h1>
+
+@code {
+    [Inject] NavigationManager NavManager { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string? code { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string? state { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavManager.NavigateTo($"sidekick://oath/poe?code={code}&state={state}");
+    }
+}
