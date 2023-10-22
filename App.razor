@@ -1,7 +1,7 @@
 ﻿
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(SmallLayout)" />
     </Found>
     <NotFound>
         <LayoutView Layout="@typeof(SmallLayout)">
@@ -13,6 +13,7 @@
 <MudThemeProvider Theme="Theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
+<AnchorNavigation />
 
 @code {
     private MudTheme Theme { get; set; } = null!;
@@ -23,9 +24,42 @@
             {
                 Palette = GetPaletteDark(),
                 PaletteDark = GetPaletteDark(),
+
+                Typography = new Typography()
+                {
+                    H1 = CreateTypography<H1>("3rem"),
+                    H2 = CreateTypography<H2>("2rem"),
+                    H3 = CreateTypography<H3>("1.75rem"),
+                    H4 = CreateTypography<H4>("1.5rem"),
+                    H5 = CreateTypography<H5>("1.25rem"),
+                    H6 = CreateTypography<H6>("1rem"),
+                    Subtitle1 = CreateTypography<Subtitle1>("1.25rem"),
+                    Subtitle2 = CreateTypography<Subtitle2>("1.125rem"),
+                    Body1 = CreateTypography<Body1>("1rem"),
+                    Body2 = CreateTypography<Body2>("1rem"),
+                    Button = CreateTypography<Button>("1rem"),
+                    Caption = CreateTypography<Caption>("0.875rem"),
+                    Overline = CreateTypography<Overline>("0.875rem"),
+                    Default = CreateTypography<Default>("1rem"),
+                },
             };
 
         base.OnInitialized();
+    }
+
+    private T CreateTypography<T>(string fontSize)
+        where T : BaseTypography, new()
+    {
+        var typo = new T();
+        if (typo is BaseTypography baseTypo)
+        {
+            baseTypo.FontFamily = new[] { "fontin", "system-ui", "-apple-system", "Arial", "sans-serif" };
+            baseTypo.FontSize = fontSize;
+            baseTypo.FontWeight = 400;
+            baseTypo.LetterSpacing = "none";
+            baseTypo.LineHeight = 1.2;
+        }
+        return typo;
     }
 
     private PaletteDark GetPaletteDark() => new PaletteDark()

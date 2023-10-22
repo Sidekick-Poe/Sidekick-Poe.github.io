@@ -1,9 +1,7 @@
 ﻿
 <ErrorBoundary>
     <ChildContent>
-        <MudLayout>
-            @ChildContent
-        </MudLayout>
+        @ChildContent
     </ChildContent>
     <ErrorContent>
         <div class="blazor-error">
@@ -20,23 +18,11 @@
 </ErrorBoundary>
 
 @code {
-    /// <summary>
-    /// Gets or sets the content of the wrapper.
-    /// </summary>
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    /// <summary>
-    /// Gets or sets a value indicating whether the view has an app bar or not.
-    /// </summary>
-    [Parameter]
-    public bool HasAppbar { get; set; } = true;
+    public RenderFragment ChildContent { get; set; } = null!;
 
     [Inject]
-    private NavigationManager NavigationManager { get; set; }
-
-    [Inject]
-    private IJSRuntime JSRuntime { get; set; }
+    private NavigationManager NavigationManager { get; set; } = null!;
 
     private void Reload()
     {

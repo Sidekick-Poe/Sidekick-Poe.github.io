@@ -1,7 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
 <Wrapper>
-    <MudContainer MaxWidth="MaxWidth.Small">
-        @Body
-    </MudContainer>
+    <MudLayout>
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.Small">
+                @Body
+            </MudContainer>
+        </MudMainContent>
+    </MudLayout>
 </Wrapper>

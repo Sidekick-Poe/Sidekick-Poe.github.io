@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+
+<Wrapper>
+    <MudLayout>
+        <MudAppBar>
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleDrawer" Class="d-md-none" />
+            <div class="icon">
+                <img src="/images/orbs/ExaltedOrb.png" />
+            </div>
+            <MudText Typo="Typo.h3">Sidekick</MudText>
+            <MudText Typo="Typo.body1" Class="ml-8">A Path of Exile tool.</MudText>
+        </MudAppBar>
+        <MudDrawer @bind-Open="@DrawerOpened" ClipMode="DrawerClipMode.Docked" Variant="DrawerVariant.Responsive">
+            <MudNavMenu>
+                <MudNavLink Href="#installation">Installation</MudNavLink>
+                <MudNavGroup Title="Features" Expanded="true">
+                    <MudNavLink Href="#price-checking">Price Checking</MudNavLink>
+                </MudNavGroup>
+                <MudNavLink Href="#about">About</MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.Medium" Class="py-6">
+                @Body
+            </MudContainer>
+        </MudMainContent>
+    </MudLayout>
+</Wrapper>
+
+@code {
+    bool DrawerOpened = true;
+
+    void ToggleDrawer()
+    {
+        DrawerOpened = !DrawerOpened;
+    }
+}

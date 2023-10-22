@@ -1,0 +1,68 @@
+﻿@implements IDisposable
+
+@code {
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = null!;
+
+    private IJSObjectReference? Module { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Shared/AnchorNavigation.razor.js");
+        NavigationManager.LocationChanged += OnLocationChanged;
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await ScrollToFragment();
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        await ScrollToFragment();
+    }
+
+    private async Task ScrollToFragment()
+    {
+        var uri = new Uri(NavigationManager.Uri, UriKind.Absolute);
+        var fragment = uri.Fragment;
+        if (!fragment.StartsWith('#'))
+        {
+            return;
+        }
+
+        // Handle text fragment (https://example.org/#test:~:text=foo)
+        // https://github.com/WICG/scroll-to-text-fragment/
+        var elementId = fragment.Substring(1);
+        var index = elementId.IndexOf(":~:", StringComparison.Ordinal);
+        if (index > 0)
+        {
+            elementId = elementId.Substring(0, index);
+        }
+
+        if (string.IsNullOrEmpty(elementId))
+        {
+            return;
+        }
+
+        do
+        {
+            if (Module != null)
+            {
+                await Module.InvokeVoidAsync("scrollTo", elementId);
+            }
+
+            await Task.Delay(100);
+        } while (Module == null);
+    }
+}

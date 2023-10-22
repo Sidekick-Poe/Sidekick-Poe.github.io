@@ -1,0 +1,80 @@
+﻿@page "/"
+@layout HomeLayout
+
+<div class="d-flex justify-center align-center">
+    <img src="/images/orbs/ExaltedOrb.png" />
+    <MudText Typo="Typo.h1" Class="ml-8">Sidekick</MudText>
+</div>
+<MudText Class="mt-3">A Path of Exile companion tool. Price check items, check for dangerous map modifiers, look at easily accessible cheatsheets, and more!</MudText>
+
+<div id="installation"></div>
+<MudCard Class="mt-6">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2">Installation and Usage</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudList Clickable="true">
+        <MudListItem>
+            <div class="d-flex align-center">
+                <MudText Typo="Typo.h4">1.</MudText>
+                <div class="ml-6">Download Sidekick from our <a href="https://github.com/Sidekick-Poe/Sidekick">github page</a>.</div>
+            </div>
+        </MudListItem>
+        <MudListItem>
+            <div class="d-flex align-center">
+                <MudText Typo="Typo.h4">2.</MudText>
+                <div class="ml-6">Run Sidekick.application</div>
+            </div>
+        </MudListItem>
+        <MudListItem>
+            <div class="d-flex align-center">
+                <MudText Typo="Typo.h4">3.</MudText>
+                <MudChip Variant="Variant.Outlined" Color="Color.Warning" Class="ml-6">Optional</MudChip>
+                <div class="ml-6">You may get a security warning when running this software. You may have to add a security exception to run this software. Our code is open source and there is no malware included with this program.</div>
+            </div>
+        </MudListItem>
+        <MudListItem>
+            <div class="d-flex align-center">
+                <MudText Typo="Typo.h4">4.</MudText>
+                <div class="ml-6">Check your game settings! Make sure your display mode is set to 'Windowed' or 'Windowed Fullscreen'. Sidekick will not work while Path of Exile is in Fullscreen mode.</div>
+            </div>
+        </MudListItem>
+        <MudListItem>
+            <div class="d-flex align-center">
+                <MudText Typo="Typo.h4">5.</MudText>
+                <div class="ml-6">Enjoy! Report issues or suggestions by communicating in our Discord or by creating an issue on GitHub.</div>
+            </div>
+        </MudListItem>
+    </MudList>
+</MudCard>
+
+<div id="features"></div>
+<MudText Typo="Typo.h1" Class="mt-6">Features!</MudText>
+
+<div id="price-checking"></div>
+<MudCard Class="mt-6">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2">Price Checking <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip></MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent>
+        <MudText Typo="Typo.body1">Opens a trade view from the official Path of Exile trade API. You can compare and preview items by clicking on any result. For rare items, a price prediction from poeprices.info is shown. For unique items, prices from poe.ninja are used.</MudText>
+    </MudCardContent>
+    <div class="px-4 pb-4 pt-2">
+        <MudGrid Spacing="2">
+            <MudItem xs="4">
+                <MudCardMedia Image="/assets/images/trade_maximized.png" Height="350" />
+            </MudItem>
+            <MudItem xs="4">
+                <MudCardMedia Image="/assets/images/trade_minimized.png" Height="350" />
+            </MudItem>
+            <MudItem xs="4">
+                <MudCardMedia Image="/assets/images/trade_currency.png" Height="350" />
+            </MudItem>
+        </MudGrid>
+    </div>
+</MudCard>
+
+<About />
