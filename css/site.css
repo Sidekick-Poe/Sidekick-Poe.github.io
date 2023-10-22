@@ -51,7 +51,7 @@
 
 .initialization-loader {
     animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg,#424242 50%,#616161 50%);
+    background-image: linear-gradient(-60deg,#0d0b16 50%,#000000 50%);
     bottom: 0;
     left: -50%;
     opacity: .5;
@@ -96,4 +96,19 @@
 
 [id] {
     scroll-margin-top: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mud-typography-h1,
+.mud-typography-h2,
+.mud-typography-h3,
+.mud-typography-h4,
+.mud-typography-h5,
+.mud-typography-h6 {
+    color: #fff;
 }
