@@ -14,8 +14,35 @@
         object-fit: contain;
         image-rendering: -webkit-optimize-contrast;
     }
-/* /Homepage/Index.razor.rz.scp.css */
-[b-fp2uomrcxk] .mud-card-media {
+/* /Homepage/PicturePreview.razor.rz.scp.css */
+[b-pt746u869u] .mud-card-media {
+    flex-grow: 1;
+    background-position: top left;
+}
+
+div[b-pt746u869u] {
+    cursor: pointer;
+    position: relative;
+}
+
+    div[b-pt746u869u]::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        opacity: 0;
+    }
+
+        div:hover[b-pt746u869u]::after {
+            transition: opacity ease-in-out 0.2s;
+            opacity: 0.05;
+        }
+/* /Homepage/PicturePreviewContent.razor.rz.scp.css */
+[b-j06we7ga0l] .mud-card-media {
     flex-grow: 1;
     background-position: top left;
 }
