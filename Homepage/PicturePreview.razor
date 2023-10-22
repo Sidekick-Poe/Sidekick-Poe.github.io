@@ -4,10 +4,8 @@
     <MudCardMedia Image="@Image" Height="350" />
 </div>
 
+@inject IDialogService DialogService;
 @code {
-    [Inject]
-    private IDialogService DialogService { get; set; } = null!;
-
     [Parameter]
     public string? Title { get; set; }
 

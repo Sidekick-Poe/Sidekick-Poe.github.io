@@ -17,12 +17,10 @@
     </ErrorContent>
 </ErrorBoundary>
 
+@inject NavigationManager NavigationManager;
 @code {
     [Parameter]
     public RenderFragment ChildContent { get; set; } = null!;
-
-    [Inject]
-    private NavigationManager NavigationManager { get; set; } = null!;
 
     private void Reload()
     {
