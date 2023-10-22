@@ -15,6 +15,10 @@
                 <MudNavLink Href="#installation">Installation</MudNavLink>
                 <MudNavGroup Title="Features" Expanded="true">
                     <MudNavLink Href="#price-checking">Price Checking</MudNavLink>
+                    <MudNavLink Href="#map-information">Map Information</MudNavLink>
+                    <MudNavLink Href="#chat-commands">Chat Commands</MudNavLink>
+                    <MudNavLink Href="#cheatsheets">Cheatsheets</MudNavLink>
+                    <MudNavLink Href="#other-features">Other</MudNavLink>
                 </MudNavGroup>
                 <MudNavLink Href="#about">About</MudNavLink>
             </MudNavMenu>
@@ -28,9 +32,9 @@
 </Wrapper>
 
 @code {
-    bool DrawerOpened = true;
+    private bool DrawerOpened { get; set; } = true;
 
-    void ToggleDrawer()
+    private void ToggleDrawer()
     {
         DrawerOpened = !DrawerOpened;
     }

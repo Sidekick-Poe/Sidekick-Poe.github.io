@@ -1,0 +1,26 @@
+::deep .mud-card-media {
+    flex-grow: 1;
+    background-position: top left;
+}
+
+div {
+    cursor: pointer;
+    position: relative;
+}
+
+    div::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        opacity: 0;
+    }
+
+        div:hover::after {
+            transition: opacity ease-in-out 0.2s;
+            opacity: 0.05;
+        }

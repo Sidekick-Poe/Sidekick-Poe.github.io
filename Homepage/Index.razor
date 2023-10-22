@@ -14,11 +14,11 @@
             <MudText Typo="Typo.h2">Installation and Usage</MudText>
         </CardHeaderContent>
     </MudCardHeader>
-    <MudList Clickable="true">
+    <MudList>
         <MudListItem>
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
-                <div class="ml-6">Download Sidekick from our <a href="https://github.com/Sidekick-Poe/Sidekick">github page</a>.</div>
+                <div class="ml-6">Download Sidekick from our <MudLink Href="https://github.com/Sidekick-Poe/Sidekick">github page</MudLink>.</div>
             </div>
         </MudListItem>
         <MudListItem>
@@ -65,16 +65,86 @@
     <div class="px-4 pb-4 pt-2">
         <MudGrid Spacing="2">
             <MudItem xs="4">
-                <MudCardMedia Image="/assets/images/trade_maximized.png" Height="350" />
+                <PicturePreview Image="/assets/images/trade_maximized.png" Title="Trade" />
             </MudItem>
             <MudItem xs="4">
-                <MudCardMedia Image="/assets/images/trade_minimized.png" Height="350" />
+                <PicturePreview Image="/assets/images/trade_minimized.png" Title="Minimized View" />
             </MudItem>
             <MudItem xs="4">
-                <MudCardMedia Image="/assets/images/trade_currency.png" Height="350" />
+                <PicturePreview Image="/assets/images/trade_currency.png" Title="Bulk Currency" />
             </MudItem>
         </MudGrid>
     </div>
+</MudCard>
+
+<div id="map-information"></div>
+<MudCard Class="mt-6">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2">Map Information <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip></MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent>
+        <MudText Typo="Typo.body1">
+            Checks the modifiers on a map or contract for mods that are dangerous (configurable through a regex). Shows wiki information on bosses and possible drops.
+        </MudText>
+    </MudCardContent>
+    <div class="px-4 pb-4 pt-2">
+        <MudGrid Spacing="2">
+            <MudItem xs="6">
+                <PicturePreview Image="/assets/images/map_safe.png" Title="Safe" />
+            </MudItem>
+            <MudItem xs="6">
+                <PicturePreview Image="/assets/images/map_unsafe.png" Title="Unsafe" />
+            </MudItem>
+        </MudGrid>
+    </div>
+</MudCard>
+
+<div id="chat-commands"></div>
+<MudCard Class="mt-6">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2">Chat Commands</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudList>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Go to Hideout <MudChip Variant="Variant.Outlined">Default Binding: F5</MudChip></MudText>
+            Quickly go to your hideout. Writes the following chat command: /hideout
+        </MudListItem>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Leave Party <MudChip Variant="Variant.Outlined">Default Binding: F4</MudChip></MudText>
+            Quickly leave a party. Writes the following chat command: /leave
+        </MudListItem>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Reply to Last Whisper <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Shift+R</MudChip></MudText>
+            Reply to the last whisper received. Starts writing the following chat command: @@{characterName}
+        </MudListItem>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Exit to Character Selection <MudChip Variant="Variant.Outlined">Default Binding: F9</MudChip></MudText>
+            Exit to the character selection screen. Writes the following chat command: /exit
+        </MudListItem>
+    </MudList>
+</MudCard>
+
+<div id="other-features"></div>
+<MudCard Class="mt-6">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2">Other Features</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudList>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Open Wiki <MudChip Variant="Variant.Outlined">Default Binding: Alt+W</MudChip></MudText>
+            Open the item currently under your mouse in your preferred wiki.
+        </MudListItem>
+        <MudListItem>
+            <MudText Typo="Typo.h4">Find Items <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+F</MudChip></MudText>
+            Searches in your stash or passive tree with the name of the item currently under your mouse.
+        </MudListItem>
+    </MudList>
 </MudCard>
 
 <About />

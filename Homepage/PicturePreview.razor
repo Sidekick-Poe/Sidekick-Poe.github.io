@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+<div @onclick="() => OpenPreview()">
+    <MudCardMedia Image="@Image" Height="350" />
+</div>
+
+@code {
+    [Inject]
+    private IDialogService DialogService { get; set; } = null!;
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Image { get; set; }
+
+    private async Task OpenPreview()
+    {
+        var parameters = new DialogParameters<PicturePreviewContent> { { x => x.Image, Image } };
+        var dialog = await DialogService.ShowAsync<PicturePreviewContent>(Title, parameters, new DialogOptions()
+        {
+            CloseButton = true,
+            MaxWidth = MaxWidth.Large,
+        });
+    }
+}
