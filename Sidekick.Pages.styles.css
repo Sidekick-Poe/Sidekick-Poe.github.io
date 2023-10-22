@@ -1,0 +1,21 @@
+/* /Homepage/HomeLayout.razor.rz.scp.css */
+.icon[b-vy6gk2g69o] {
+    width: 48px;
+    height: 48px;
+    margin-top: calc(-4px * 2);
+    margin-right: 2px;
+    padding: 0 5px;
+}
+
+    .icon img[b-vy6gk2g69o] {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        image-rendering: -webkit-optimize-contrast;
+    }
+/* /Homepage/Index.razor.rz.scp.css */
+[b-fp2uomrcxk] .mud-card-media {
+    flex-grow: 1;
+    background-position: top left;
+}
