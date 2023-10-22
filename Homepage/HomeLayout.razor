@@ -8,7 +8,19 @@
                 <img src="/images/orbs/ExaltedOrb.png" />
             </div>
             <MudText Typo="Typo.h3">Sidekick</MudText>
-            <MudText Typo="Typo.body1" Class="ml-8">A Path of Exile tool.</MudText>
+            <MudText Typo="Typo.body1" Class="ml-8 d-none d-sm-block">A Path of Exile tool.</MudText>
+
+            <MudSpacer />
+
+            <MudIconButton Icon="@Icons.Custom.Brands.GitHub"
+                           Color="Color.Inherit"
+                           Href="https://github.com/Sidekick-Poe/Sidekick"
+                           Target="_blank" />
+
+            <MudIconButton Icon="@Icons.Custom.Brands.Discord"
+                           Color="Color.Inherit"
+                           Href="https://discord.gg/H4bg4GQ"
+                           Target="_blank" />
         </MudAppBar>
         <MudDrawer @bind-Open="@DrawerOpened" ClipMode="DrawerClipMode.Docked" Variant="DrawerVariant.Responsive">
             <MudNavMenu>
