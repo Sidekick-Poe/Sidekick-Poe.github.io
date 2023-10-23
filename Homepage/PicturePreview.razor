@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <div @onclick="() => OpenPreview()">
-    <MudCardMedia Image="@Image" Height="250" />
+    <MudCardMedia Image="@Image" Height="Height" />
 </div>
 
 @inject IDialogService DialogService;
@@ -11,6 +11,9 @@
 
     [Parameter]
     public string? Image { get; set; }
+
+    [Parameter]
+    public int Height { get; set; } = 250;
 
     private async Task OpenPreview()
     {
