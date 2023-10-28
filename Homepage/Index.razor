@@ -1,8 +1,18 @@
 ﻿@page "/"
 @layout HomeLayout
 
+<div id="download"></div>
 <SidekickLogo />
 <MudText Class="mt-3">A Path of Exile companion tool. Price check items, check for dangerous map modifiers, look at easily accessible cheatsheets, and more!</MudText>
+<div class="d-flex justify-center align-center mt-6">
+    <MudButton Size="Size.Large" Variant="Variant.Filled" Href="https://github.com/Sidekick-Poe/Sidekick/releases/latest" Color="Color.Primary" Class="py-4 px-6" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Download</MudButton>
+</div>
+
+<div class="d-flex justify-center align-center mt-4">
+    <div style="max-width: 30rem;">
+        <MudText Typo="Typo.caption" Align="Align.Center">Alternatively, you can download the beta version <MudLink Href="https://sidekick-poe.github.io/Sidekick-Beta/Sidekick.application" Target="_blank">here</MudLink>. Note that the beta version is unstable. Use Discord to report bugs and for support.</MudText>
+    </div>
+</div>
 
 <div id="installation"></div>
 <MudCard Class="mt-6">
@@ -15,7 +25,7 @@
         <MudListItem>
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
-                <div class="ml-6">Download Sidekick from our <MudLink Href="https://github.com/Sidekick-Poe/Sidekick">github page</MudLink>.</div>
+                <div class="ml-6">Download Sidekick from <MudLink Href="#download">here</MudLink>.</div>
             </div>
         </MudListItem>
         <MudListItem>
