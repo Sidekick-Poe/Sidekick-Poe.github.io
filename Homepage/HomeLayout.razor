@@ -3,24 +3,24 @@
 <Wrapper>
     <MudLayout>
         <MudAppBar>
-            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleDrawer" Class="d-md-none" />
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleDrawer" Class="d-md-none"/>
             <div class="icon">
-                <img src="/images/orbs/ExaltedOrb.png" />
+                <img src="/images/orbs/ExaltedOrb.png"/>
             </div>
             <MudText Typo="Typo.h3">Sidekick</MudText>
             <MudText Typo="Typo.body1" Class="ml-8 d-none d-sm-block">A Path of Exile tool.</MudText>
 
-            <MudSpacer />
+            <MudSpacer/>
 
             <MudIconButton Icon="@Icons.Custom.Brands.GitHub"
                            Color="Color.Inherit"
                            Href="https://github.com/Sidekick-Poe/Sidekick"
-                           Target="_blank" />
+                           Target="_blank"/>
 
             <MudIconButton Icon="@Icons.Custom.Brands.Discord"
                            Color="Color.Inherit"
                            Href="https://discord.gg/H4bg4GQ"
-                           Target="_blank" />
+                           Target="_blank"/>
         </MudAppBar>
         <MudDrawer @bind-Open="@DrawerOpened" ClipMode="DrawerClipMode.Docked" Variant="DrawerVariant.Responsive">
             <MudNavMenu>
@@ -33,6 +33,7 @@
                     <MudNavLink Href="#chat-commands">Chat Commands</MudNavLink>
                     <MudNavLink Href="#other-features">Other</MudNavLink>
                 </MudNavGroup>
+                <MudNavLink Href="#useful">Useful Websites</MudNavLink>
                 <MudNavLink Href="#about">About</MudNavLink>
             </MudNavMenu>
         </MudDrawer>
@@ -43,7 +44,7 @@
 
             <MudContainer MaxWidth="MaxWidth.Medium" Class="mt-12 py-3">
                 <div class="d-flex align-center justify-center">
-                    <img src="/images/orbs/ExaltedOrb.png" style="width: 32px;" />
+                    <img src="/images/orbs/ExaltedOrb.png" style="width: 32px;"/>
                     <MudText Typo="Typo.h6" Class="ml-4">Sidekick</MudText>
                 </div>
                 <MudText Typo="Typo.caption" Align="Align.Center" Class="mt-1 d-block">This product isn't affiliated with or endorsed by Grinding Gear Games in any way.</MudText>
@@ -59,4 +60,5 @@
     {
         DrawerOpened = !DrawerOpened;
     }
+
 }
