@@ -1,0 +1,57 @@
+﻿@page "/oauth/poe"
+@using System.Text
+@using System.Text.Json
+@using Sidekick.Pages.Pages.Authentication.Models
+
+<SidekickLogo />
+@if (Error)
+{
+    <MudAlert Class="mt-6" Variant="Variant.Filled" Severity="Severity.Error">An error occured during the authentication process.</MudAlert>
+}
+else
+{
+    <MudText Class="mt-6" Align="Align.Center">Authentication in progress. Grabbing the token and opening the Sidekick application.</MudText>
+}
+
+
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+@inject HttpClient HttpClient
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "code")]
+    public string? Code { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "state")]
+    public string? State { get; set; }
+
+    private bool Error { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        var verifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Authenticate.LocalStorageVerifier);
+        var requestContent = new StringContent($"client_id={Authenticate.ClientId}&grant_type=authorization_code&code={Code}&redirect_uri={Authenticate.RedirectUrl}&scope={Authenticate.Scopes}&code_verifier={verifier}", Encoding.UTF8, "application/x-www-form-urlencoded");
+        var response = await HttpClient.PostAsync(Authenticate.TokenUrl, requestContent);
+        if (!response.IsSuccessStatusCode)
+        {
+            Error = true;
+            StateHasChanged();
+            return;
+        }
+
+        var responseContent = await response.Content.ReadAsStreamAsync();
+        var result = await JsonSerializer.DeserializeAsync<Oauth2TokenResponse>(responseContent);
+        if (result?.access_token == null)
+        {
+            Error = true;
+            StateHasChanged();
+            return;
+        }
+
+        Console.WriteLine($"Navigating to: sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
+        NavigationManager.NavigateTo($"sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
+    }
+}

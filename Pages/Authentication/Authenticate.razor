@@ -1,0 +1,58 @@
+﻿@page "/oauth/poe/authenticate"
+@using System.Security.Cryptography
+@using System.Text
+
+<SidekickLogo />
+<MudText Class="mt-6" Align="Align.Center">Authentication process will start. Redirecting to the Path of Exile website.</MudText>
+
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+@code {
+    public const string AuthorizationUrl = "https://www.pathofexile.com/oauth/authorize";
+    public const string TokenUrl = "https://www.pathofexile.com/oauth/token";
+    public const string RedirectUrl = "https://sidekick-poe.github.io/oauth/poe";
+    public const string ClientId = "sidekick";
+    public const string Scopes = "account:stashes";
+    public const string LocalStorageVerifier = "poe-verifier";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        var state = Guid.NewGuid().ToString();
+        var verifier = GenerateCodeVerifier();
+        await JsRuntime.InvokeVoidAsync("localStorage.setItem", LocalStorageVerifier, "verifier");
+
+        var challenge = GenerateCodeChallenge(verifier);
+
+        var authenticationLink = $"{AuthorizationUrl}?client_id={ClientId}&response_type=code&scope={Scopes}&state={state}&redirect_uri={RedirectUrl}&code_challenge={challenge}&code_challenge_method=S256";
+        NavigationManager.NavigateTo(authenticationLink);
+    }
+
+    private static string GenerateCodeVerifier()
+    {
+        var rng = RandomNumberGenerator.Create();
+        var bytes = new byte[32];
+        rng.GetBytes(bytes);
+
+        var codeVerifier = Convert
+            .ToBase64String(bytes)
+            .TrimEnd('=')
+            .Replace('+', '-')
+            .Replace('/', '_');
+        return codeVerifier;
+    }
+
+    private static string GenerateCodeChallenge(string verifier)
+    {
+        using var sha256 = SHA256.Create();
+        var challengeBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(verifier));
+        var codeChallenge = Convert
+            .ToBase64String(challengeBytes)
+            .TrimEnd('=')
+            .Replace('+', '-')
+            .Replace('/', '_');
+
+        return codeChallenge;
+    }
+}
