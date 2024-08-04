@@ -21,7 +21,7 @@
 
         var state = Guid.NewGuid().ToString();
         var verifier = GenerateCodeVerifier();
-        await JsRuntime.InvokeVoidAsync("localStorage.setItem", LocalStorageVerifier, "verifier");
+        await JsRuntime.InvokeVoidAsync("localStorage.setItem", LocalStorageVerifier, verifier);
 
         var challenge = GenerateCodeChallenge(verifier);
 
