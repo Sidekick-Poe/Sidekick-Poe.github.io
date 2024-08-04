@@ -33,25 +33,34 @@ else
         await base.OnInitializedAsync();
 
         var verifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Authenticate.LocalStorageVerifier);
-        var requestContent = new StringContent($"client_id={Authenticate.ClientId}&grant_type=authorization_code&code={Code}&redirect_uri={Authenticate.RedirectUrl}&scope={Authenticate.Scopes}&code_verifier={verifier}", Encoding.UTF8, "application/x-www-form-urlencoded");
-        var response = await HttpClient.PostAsync(Authenticate.TokenUrl, requestContent);
-        if (!response.IsSuccessStatusCode)
-        {
-            Error = true;
-            StateHasChanged();
-            return;
-        }
+        var requestContent = $"client_id={Authenticate.ClientId}&grant_type=authorization_code&code={Code}&redirect_uri={Authenticate.RedirectUrl}&scope={Authenticate.Scopes}&code_verifier={verifier}";
+        Console.WriteLine($"Request content: {requestContent}");
 
-        var responseContent = await response.Content.ReadAsStreamAsync();
-        var result = await JsonSerializer.DeserializeAsync<Oauth2TokenResponse>(responseContent);
-        if (result?.access_token == null)
+        try
         {
-            Error = true;
-            StateHasChanged();
-            return;
-        }
+            var response = await HttpClient.PostAsync(Authenticate.TokenUrl, new StringContent(requestContent));
+            if (!response.IsSuccessStatusCode)
+            {
+                Error = true;
+                StateHasChanged();
+                return;
+            }
 
-        Console.WriteLine($"Navigating to: sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
-        NavigationManager.NavigateTo($"sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
+            var responseContent = await response.Content.ReadAsStreamAsync();
+            var result = await JsonSerializer.DeserializeAsync<Oauth2TokenResponse>(responseContent);
+            if (result?.access_token == null)
+            {
+                Error = true;
+                StateHasChanged();
+                return;
+            }
+
+            Console.WriteLine($"Navigating to: sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
+            NavigationManager.NavigateTo($"sidekick://oauth/poe?access_token={result.access_token}&expires_in={DateTimeOffset.Now}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }

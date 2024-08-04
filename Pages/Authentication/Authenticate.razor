@@ -26,6 +26,7 @@
         var challenge = GenerateCodeChallenge(verifier);
 
         var authenticationLink = $"{AuthorizationUrl}?client_id={ClientId}&response_type=code&scope={Scopes}&state={state}&redirect_uri={RedirectUrl}&code_challenge={challenge}&code_challenge_method=S256";
+        Console.WriteLine($"Navigating to: {authenticationLink}");
         NavigationManager.NavigateTo(authenticationLink);
     }
 
