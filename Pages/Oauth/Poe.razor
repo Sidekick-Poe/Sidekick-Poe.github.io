@@ -1,0 +1,20 @@
+﻿﻿@page "/oauth/poe"
+
+<SidekickLogo />
+<MudText Class="mt-6" Align="Align.Center">Opening the Sidekick application. Once the application is opened, you can close this page.</MudText>
+
+@inject NavigationManager NavigationManager
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "code")]
+    public string? Code { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "state")]
+    public string? State { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo($"sidekick://oauth/poe?code={Code}&state={State}");
+    }
+}

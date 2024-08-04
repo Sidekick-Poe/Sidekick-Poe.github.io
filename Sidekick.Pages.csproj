@@ -13,4 +13,25 @@
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Pages\Authentication\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Pages\Authentication\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Authentication\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\Authentication\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Authentication\Authenticate.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Authentication\Poe.razor" />
+  </ItemGroup>
+
 </Project>
