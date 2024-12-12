@@ -2,14 +2,29 @@
 @layout HomeLayout
 
 <div id="download"></div>
-<SidekickLogo />
-<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile companion tool. Price check items, check for dangerous map modifiers, look at easily accessible cheatsheets, and more!</MudText>
+<SidekickLogo/>
+<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile companion tool. Price check
+    items, check for dangerous map modifiers, look at easily accessible cheatsheets, and more!
+</MudText>
 <div class="d-flex justify-center align-center mt-6">
-    <MudButton Size="Size.Large" Variant="Variant.Filled" Href="https://sidekick-poe.github.io/Sidekick-Release/Sidekick.application" Color="Color.Primary" Class="py-4 px-6" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Download</MudButton>
+    <MudButton Size="Size.Large" Variant="Variant.Filled"
+               Href="https://sidekick-poe.github.io/Sidekick-Release/Sidekick.application" Color="Color.Primary"
+               Class="py-4 px-6" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Download
+    </MudButton>
 </div>
 
 <div class="d-flex justify-center align-center mt-4">
-    <MudText Class="d-block" Style="max-width: 30rem;" Typo="Typo.caption" Align="Align.Center">Get early access to new features with the <MudLink Href="https://sidekick-poe.github.io/Sidekick-Beta/Sidekick.application" Typo="Typo.caption" Target="_blank">beta version</MudLink>. Note that the beta version is unstable. Use Discord to report bugs and for support.</MudText>
+    <MudText Class="d-block" Style="max-width: 30rem;" Typo="Typo.caption" Align="Align.Center">Get early access to new
+        features with the beta version. Note that the beta version is unstable. Use Discord to report bugs and for
+        support.
+    </MudText>
+</div>
+
+<div class="d-flex justify-center align-center mt-2">
+    <MudButton Size="Size.Large" Variant="Variant.Outlined"
+               Href="https://sidekick-poe.github.io/Sidekick-Beta/Sidekick.application" Color="Color.Primary"
+               EndIcon="@Icons.Material.Filled.Download" Target="_blank">Download Beta Version
+    </MudButton>
 </div>
 
 <div id="installation"></div>
@@ -23,7 +38,10 @@
         <MudListItem>
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
-                <div class="ml-6">Download Sidekick from <MudLink Href="#download">here</MudLink>.</div>
+                <div class="ml-6">Download Sidekick from
+                    <MudLink Href="#download">here</MudLink>
+                    .
+                </div>
             </div>
         </MudListItem>
         <MudListItem>
@@ -36,26 +54,34 @@
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">3.</MudText>
                 <MudChip Variant="Variant.Outlined" Color="Color.Warning" Class="ml-6">Optional</MudChip>
-                <div class="ml-6">You may get a security warning when running this software. You may have to add a security exception to run this software. Our code is open source and there is no malware included with this program.</div>
+                <div class="ml-6">You may get a security warning when running this software. You may have to add a
+                    security exception to run this software. Our code is open source and there is no malware included
+                    with this program.
+                </div>
             </div>
         </MudListItem>
         <MudListItem>
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">4.</MudText>
-                <div class="ml-6">Check your game settings! Make sure your display mode is set to 'Windowed' or 'Windowed Fullscreen'. Sidekick will not work while Path of Exile is in Fullscreen mode.</div>
+                <div class="ml-6">Check your game settings! Make sure your display mode is set to 'Windowed' or
+                    'Windowed Fullscreen'. Sidekick will not work while Path of Exile is in Fullscreen mode.
+                </div>
             </div>
         </MudListItem>
         <MudListItem>
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">5.</MudText>
-                <div class="ml-6">Enjoy! Report issues or suggestions by communicating in our Discord or by creating an issue on GitHub.</div>
+                <div class="ml-6">Enjoy! Report issues or suggestions by communicating in our Discord or by creating an
+                    issue on GitHub.
+                </div>
             </div>
         </MudListItem>
     </MudList>
     <MudCardContent>
         <MudText Typo="Typo.h5">Uninstallation</MudText>
         <MudText Typo="Typo.body1">
-            You may uninstall Sidekick by using Windows Settings => Apps & features. Optionally, you may want to delete additional files. Sidekick stores additional cache and setting files at %AppData%\Roaming\sidekick.
+            You may uninstall Sidekick by using Windows Settings => Apps & features. Optionally, you may want to delete
+            additional files. Sidekick stores additional cache and setting files at %AppData%\Roaming\sidekick.
         </MudText>
     </MudCardContent>
 </MudCard>
@@ -67,19 +93,24 @@
 <MudCard Class="mt-6">
     <MudCardHeader>
         <CardHeaderContent>
-            <MudText Typo="Typo.h2">Price Checking <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip></MudText>
+            <MudText Typo="Typo.h2">Price Checking
+                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip>
+            </MudText>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent>
-        <MudText Typo="Typo.body1">Opens a trade view from the official Path of Exile trade API. You can compare and preview items by clicking on any result. For rare items, a price prediction from poeprices.info is shown. For unique items, prices from poe.ninja are used.</MudText>
+        <MudText Typo="Typo.body1">Opens a trade view from the official Path of Exile trade API. You can compare and
+            preview items by clicking on any result. For rare items, a price prediction from poeprices.info is shown.
+            For unique items, prices from poe.ninja are used.
+        </MudText>
     </MudCardContent>
     <div class="px-4 pb-4 pt-2">
         <MudGrid Spacing="2">
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/trade_item.png" Title="Item Trade" Height="220" />
+                <PicturePreview Image="/assets/images/trade_item.png" Title="Item Trade" Height="220"/>
             </MudItem>
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/trade_bulk.png" Title="Bulk Trade" Height="220" />
+                <PicturePreview Image="/assets/images/trade_bulk.png" Title="Bulk Trade" Height="220"/>
             </MudItem>
         </MudGrid>
     </div>
@@ -110,21 +141,24 @@
 <MudCard Class="mt-6">
     <MudCardHeader>
         <CardHeaderContent>
-            <MudText Typo="Typo.h2">Map Information <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip></MudText>
+            <MudText Typo="Typo.h2">Map Information
+                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip>
+            </MudText>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent>
         <MudText Typo="Typo.body1">
-            Checks the modifiers on a map or contract for mods that are dangerous (configurable through a regex). Shows wiki information on bosses and possible drops.
+            Checks the modifiers on a map or contract for mods that are dangerous (configurable through a regex). Shows
+            wiki information on bosses and possible drops.
         </MudText>
     </MudCardContent>
     <div class="px-4 pb-4 pt-2">
         <MudGrid Spacing="2">
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/map_safe.png" Title="Safe" Height="220" />
+                <PicturePreview Image="/assets/images/map_safe.png" Title="Safe" Height="220"/>
             </MudItem>
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/map_unsafe.png" Title="Unsafe" Height="220" />
+                <PicturePreview Image="/assets/images/map_unsafe.png" Title="Unsafe" Height="220"/>
             </MudItem>
         </MudGrid>
     </div>
@@ -139,19 +173,27 @@
     </MudCardHeader>
     <MudList>
         <MudListItem>
-            <MudText Typo="Typo.h4">Go to Hideout <MudChip Variant="Variant.Outlined">Default Binding: F5</MudChip></MudText>
+            <MudText Typo="Typo.h4">Go to Hideout
+                <MudChip Variant="Variant.Outlined">Default Binding: F5</MudChip>
+            </MudText>
             Quickly go to your hideout. Writes the following chat command: /hideout
         </MudListItem>
         <MudListItem>
-            <MudText Typo="Typo.h4">Leave Party <MudChip Variant="Variant.Outlined">Default Binding: F4</MudChip></MudText>
+            <MudText Typo="Typo.h4">Leave Party
+                <MudChip Variant="Variant.Outlined">Default Binding: F4</MudChip>
+            </MudText>
             Quickly leave a party. Writes the following chat command: /leave
         </MudListItem>
         <MudListItem>
-            <MudText Typo="Typo.h4">Reply to Last Whisper <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Shift+R</MudChip></MudText>
+            <MudText Typo="Typo.h4">Reply to Last Whisper
+                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Shift+R</MudChip>
+            </MudText>
             Reply to the last whisper received. Starts writing the following chat command: @@{characterName}
         </MudListItem>
         <MudListItem>
-            <MudText Typo="Typo.h4">Exit to Character Selection <MudChip Variant="Variant.Outlined">Default Binding: F9</MudChip></MudText>
+            <MudText Typo="Typo.h4">Exit to Character Selection
+                <MudChip Variant="Variant.Outlined">Default Binding: F9</MudChip>
+            </MudText>
             Exit to the character selection screen. Writes the following chat command: /exit
         </MudListItem>
     </MudList>
@@ -166,11 +208,15 @@
     </MudCardHeader>
     <MudList>
         <MudListItem>
-            <MudText Typo="Typo.h4">Open Wiki <MudChip Variant="Variant.Outlined">Default Binding: Alt+W</MudChip></MudText>
+            <MudText Typo="Typo.h4">Open Wiki
+                <MudChip Variant="Variant.Outlined">Default Binding: Alt+W</MudChip>
+            </MudText>
             Open the item currently under your mouse in your preferred wiki.
         </MudListItem>
         <MudListItem>
-            <MudText Typo="Typo.h4">Find Items <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+F</MudChip></MudText>
+            <MudText Typo="Typo.h4">Find Items
+                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+F</MudChip>
+            </MudText>
             Searches in your stash or passive tree with the name of the item currently under your mouse.
         </MudListItem>
     </MudList>
@@ -222,23 +268,23 @@
             <MudCardContent Class="mb-n3">
                 @foreach (var contributor in Contributors)
                 {
-                <MudText Class="mb-3 overflow-hidden" Style="text-overflow: ellipsis;">
-                    <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
-                </MudText>
+                    <MudText Class="mb-3 overflow-hidden" Style="text-overflow: ellipsis;">
+                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
+                    </MudText>
                 }
 
                 <MudText>
                     Also thanks to:
                     @for (var i = 0; i < OtherContributors.Count; i++)
                     {
-                    var contributor = OtherContributors.ElementAt(i);
-                    if (i != 0)
-                    {
-                    @(", ")
-                    ;
-                    }
+                        var contributor = OtherContributors.ElementAt(i);
+                        if (i != 0)
+                        {
+                            @(", ")
+                            ;
+                        }
 
-                    <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
+                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
                     }
                 </MudText>
             </MudCardContent>
@@ -255,9 +301,9 @@
             <MudCardContent Class="mb-n3">
                 @foreach (var thirdparty in ThirdParties)
                 {
-                <MudText Class="mb-3 overflow-hidden" Style="text-overflow: ellipsis;">
-                    <MudLink Href="@thirdparty.Value">@thirdparty.Key</MudLink>
-                </MudText>
+                    <MudText Class="mb-3 overflow-hidden" Style="text-overflow: ellipsis;">
+                        <MudLink Href="@thirdparty.Value">@thirdparty.Key</MudLink>
+                    </MudText>
                 }
             </MudCardContent>
         </MudCard>
@@ -265,6 +311,7 @@
 </MudGrid>
 
 @code {
+
     private Dictionary<string, string> Contributors { get; } = new Dictionary<string, string>()
     {
         { "domialex", "https://github.com/domialex" },
@@ -296,4 +343,5 @@
         { "FuzzySharp", "https://github.com/JakeBayer/FuzzySharp" },
         { "TextCopy", "https://github.com/CopyText/TextCopy" },
     };
+
 }
