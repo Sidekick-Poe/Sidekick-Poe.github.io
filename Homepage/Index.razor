@@ -3,7 +3,7 @@
 
 <div id="download"></div>
 <SidekickLogo/>
-<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile companion tool. Price check
+<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile and Path of Exile 2 companion tool. Price check
     items, check for dangerous map modifiers, and more!
 </MudText>
 <div class="d-flex justify-center align-center mt-6">
@@ -82,6 +82,13 @@
         <MudText Typo="Typo.body1">
             You may uninstall Sidekick by using Windows Settings => Apps & features. Optionally, you may want to delete
             additional files. Sidekick stores additional cache and setting files at %AppData%\Roaming\sidekick.
+        </MudText>
+    </MudCardContent>
+    <MudCardContent>
+        <MudText Typo="Typo.h5">Troubleshooting</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">Sidekick doesn't have a ton of external dependencies, but if you run into any problems, make sure you have this installed: <MudLink Href="https://developer.microsoft.com/en-us/microsoft-edge/webview2" Target="_blank">WebView 2</MudLink>.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">
+            If you are having problems during installation, we also offer a .zip file of Sidekick. This .zip file will not auto update though. So we recommend using the installer if it works for you. You can find the zip file inside our GitHub releases here: <MudLink Href="https://github.com/Sidekick-Poe/Sidekick/releases" Target="_blank">https://github.com/Sidekick-Poe/Sidekick/releases</MudLink>
         </MudText>
     </MudCardContent>
 </MudCard>
@@ -255,7 +262,7 @@
 
 <div id="faq"></div>
 <MudText Typo="Typo.h1" Class="mt-6">FAQ!</MudText>
-<MudText Typo="Typo.h3">Is this tool allowed by GGG?</MudText>
+<MudText Typo="Typo.h3" Class="mt-3">Is this tool allowed by GGG?</MudText>
 <MudText Typo="Typo.body1">The tool is completely allowed to be used inside the games. For the official GGG stance, look
     below.
 </MudText>
@@ -293,7 +300,6 @@
                         if (i != 0)
                         {
                             @(", ")
-                            ;
                         }
 
                         <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
