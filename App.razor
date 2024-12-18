@@ -10,7 +10,7 @@
     </NotFound>
 </Router>
 
-<MudThemeProvider Theme="Theme" />
+<MudThemeProvider Theme="Theme" IsDarkMode="true" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 <AnchorNavigation />
@@ -22,7 +22,6 @@
     {
         Theme = new MudTheme()
             {
-                Palette = GetPaletteDark(),
                 PaletteDark = GetPaletteDark(),
 
                 Typography = new Typography()
@@ -66,7 +65,6 @@
         {
             Black = "#000000",
             Background = "#171624",
-            BackgroundGrey = "#1e1e1e",
             Surface = "#2c2b39",
             Divider = "#43424e",
             DividerLight = "#8e8d96",

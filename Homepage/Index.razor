@@ -40,8 +40,8 @@
             <MudText Typo="Typo.h2">Installation and Usage</MudText>
         </CardHeaderContent>
     </MudCardHeader>
-    <MudList>
-        <MudListItem>
+    <MudList T="string">
+        <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
                 <div class="ml-6">Download Sidekick from
@@ -50,13 +50,13 @@
                 </div>
             </div>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">2.</MudText>
                 <div class="ml-6">Run Sidekick.application</div>
             </div>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">3.</MudText>
                 <MudChip Variant="Variant.Outlined" Color="Color.Warning" Class="ml-6">Optional</MudChip>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">4.</MudText>
                 <div class="ml-6">Check your game settings! Make sure your display mode is set to 'Windowed' or
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">5.</MudText>
                 <div class="ml-6">Enjoy! Report issues or suggestions by communicating in our Discord or by creating an
@@ -131,7 +131,7 @@
     <MudCardHeader>
         <CardHeaderContent>
             <MudText Typo="Typo.h2">Price Checking
-                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip>
             </MudText>
         </CardHeaderContent>
     </MudCardHeader>
@@ -179,7 +179,7 @@
     <MudCardHeader>
         <CardHeaderContent>
             <MudText Typo="Typo.h2">Map Information
-                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip>
             </MudText>
         </CardHeaderContent>
     </MudCardHeader>
@@ -208,26 +208,26 @@
             <MudText Typo="Typo.h2">Chat Commands</MudText>
         </CardHeaderContent>
     </MudCardHeader>
-    <MudList>
-        <MudListItem>
+    <MudList T="string">
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Go to Hideout
                 <MudChip Variant="Variant.Outlined">Default Binding: F5</MudChip>
             </MudText>
             Quickly go to your hideout. Writes the following chat command: /hideout
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Leave Party
                 <MudChip Variant="Variant.Outlined">Default Binding: F4</MudChip>
             </MudText>
             Quickly leave a party. Writes the following chat command: /leave
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Reply to Last Whisper
                 <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Shift+R</MudChip>
             </MudText>
             Reply to the last whisper received. Starts writing the following chat command: @@{characterName}
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Exit to Character Selection
                 <MudChip Variant="Variant.Outlined">Default Binding: F9</MudChip>
             </MudText>
@@ -243,14 +243,14 @@
             <MudText Typo="Typo.h2">Other Features</MudText>
         </CardHeaderContent>
     </MudCardHeader>
-    <MudList>
-        <MudListItem>
+    <MudList T="string">
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Open Wiki
                 <MudChip Variant="Variant.Outlined">Default Binding: Alt+W</MudChip>
             </MudText>
             Open the item currently under your mouse in your preferred wiki.
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Find Items
                 <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+F</MudChip>
             </MudText>
@@ -266,24 +266,24 @@
             <MudText Typo="Typo.h2">Useful Websites</MudText>
         </CardHeaderContent>
     </MudCardHeader>
-    <MudList>
-        <MudListItem>
+    <MudList T="string">
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Leveling</MudText>
             <MudLink Href="https://poe-leveling.com/" Target="_blank">poe-leveling.com</MudLink>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Poe Labyrinth</MudText>
             <MudLink Href="https://www.poelab.com/" Target="_blank">www.poelab.com</MudLink>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Regex Tool</MudText>
             <MudLink Href="https://poe.re/" Target="_blank">poe.re</MudLink>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Chromatic Calculator</MudText>
             <MudLink Href="https://siveran.github.io/calc.html" Target="_blank">siveran.github.io</MudLink>
         </MudListItem>
-        <MudListItem>
+        <MudListItem T="string">
             <MudText Typo="Typo.h4">Blight Anointments</MudText>
             <MudLink Href="https://blight.raelys.com/" Target="_blank">blight.raelys.com</MudLink>
         </MudListItem>
@@ -317,27 +317,101 @@
                     <MudText Typo="Typo.h3">Contributors</MudText>
                 </CardHeaderContent>
             </MudCardHeader>
-            <MudCardContent Class="mb-n3">
-                @foreach (var contributor in Contributors)
+            <MudCardHeader Class="mt-n4">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Major Contributors</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="mb-n3 mt-n6">
+                @for (var i = 0; i < MajorContributors.Count; i++)
                 {
-                    <MudText Class="mb-3 overflow-hidden" Style="text-overflow: ellipsis;">
-                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
-                    </MudText>
-                }
-
-                <MudText>
-                    Also thanks to:
-                    @for (var i = 0; i < OtherContributors.Count; i++)
+                    var contributor = MajorContributors.ElementAt(i);
+                    if (i != 0)
                     {
-                        var contributor = OtherContributors.ElementAt(i);
-                        if (i != 0)
-                        {
-                            @(", ")
-                        }
+                        @(", ")
+                    }
 
+                    @if (!string.IsNullOrEmpty(contributor.Value))
+                    {
                         <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
                     }
-                </MudText>
+                    else
+                    {
+                        <MudText HtmlTag="span">@contributor.Key</MudText>
+                    }
+                }
+            </MudCardContent>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Recent Contributors</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="mb-n3 mt-n6">
+                @for (var i = 0; i < RecentContributors.Count; i++)
+                {
+                    var contributor = RecentContributors.ElementAt(i);
+                    if (i != 0)
+                    {
+                        @(", ")
+                    }
+
+                    @if (!string.IsNullOrEmpty(contributor.Value))
+                    {
+                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
+                    }
+                    else
+                    {
+                        <MudText HtmlTag="span">@contributor.Key</MudText>
+                    }
+                }
+            </MudCardContent>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Translators</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="mb-n3 mt-n6">
+                @for (var i = 0; i < Translators.Count; i++)
+                {
+                    var contributor = Translators.ElementAt(i);
+                    if (i != 0)
+                    {
+                        @(", ")
+                    }
+
+                    @if (!string.IsNullOrEmpty(contributor.Value))
+                    {
+                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
+                    }
+                    else
+                    {
+                        <MudText HtmlTag="span">@contributor.Key</MudText>
+                    }
+                }
+            </MudCardContent>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Also thanks to</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="mb-n3 mt-n6">
+                @for (var i = 0; i < OtherContributors.Count; i++)
+                {
+                    var contributor = OtherContributors.ElementAt(i);
+                    if (i != 0)
+                    {
+                        @(", ")
+                    }
+
+                    @if (!string.IsNullOrEmpty(contributor.Value))
+                    {
+                        <MudLink Href="@contributor.Value">@contributor.Key</MudLink>
+                    }
+                    else
+                    {
+                        <MudText HtmlTag="span">@contributor.Key</MudText>
+                    }
+                }
             </MudCardContent>
         </MudCard>
     </MudItem>
@@ -363,11 +437,23 @@
 
 @code {
 
-    private Dictionary<string, string> Contributors { get; } = new Dictionary<string, string>()
+    private Dictionary<string, string> MajorContributors { get; } = new Dictionary<string, string>()
     {
         { "domialex", "https://github.com/domialex" },
         { "leMicin", "https://github.com/leMicin" },
         { "mwardrop", "https://github.com/mwardrop" },
+    };
+
+    private Dictionary<string, string> RecentContributors { get; } = new Dictionary<string, string>()
+    {
+        { "warxhead1", "https://github.com/warxhead1" },
+        { "Trifall", "https://github.com/Trifall" },
+    };
+
+    private Dictionary<string, string> Translators { get; } = new Dictionary<string, string>()
+    {
+        { "EasyBabi", "" },
+        { "aprils148", "https://github.com/aprils148" },
     };
 
     private Dictionary<string, string> OtherContributors { get; } = new Dictionary<string, string>()
@@ -384,14 +470,19 @@
         { "PeteyPii", "https://github.com/PeteyPii" },
     };
 
+
     private Dictionary<string, string> ThirdParties { get; } = new Dictionary<string, string>()
     {
         { "Path of Exile Trade", "https://www.pathofexile.com/trade" },
         { "poe.ninja", "https://poe.ninja/" },
         { "poeprices.info", "https://www.poeprices.info/" },
-        { "MudBlazor", "https://github.com/Garderoben/MudBlazor" },
-        { "SharpHook", "https://sharphook.tolik.io/" },
+        { "poewiki.net", "https://www.poewiki.net/" },
+        { "poedb.tw", "https://poedb.tw/us/" },
+        { "Awakened PoE Trade", "https://github.com/SnosMe/awakened-poe-trade" },
+        { "POE-TradeMacro", "https://github.com/PoE-TradeMacro/POE-TradeMacro" },
         { "FuzzySharp", "https://github.com/JakeBayer/FuzzySharp" },
+        { "Hardcodet NotifyIcon for WPF", "https://github.com/hardcodet/wpf-notifyicon" },
+        { "SharpHook", "https://github.com/TolikPylypchuk/SharpHook" },
         { "TextCopy", "https://github.com/CopyText/TextCopy" },
     };
 
