@@ -3,35 +3,70 @@
 
 <div id="download"></div>
 <SidekickLogo/>
-<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile and Path of Exile 2 companion tool. Price check
+<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile and Path of Exile 2
+    companion tool. Price check
     items, check for dangerous map modifiers, and more!
 </MudText>
 <div class="d-flex justify-center align-center mt-6">
     <MudButton Size="Size.Large" Variant="Variant.Filled"
-               Href="https://sidekick-poe.github.io/Sidekick-Release/Sidekick.application" Color="Color.Primary"
-               Class="py-4 px-6" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Installer
+               Href="https://sidekick-poe.github.io/Sidekick-Release/Sidekick.application"
+               Color="Color.Primary"
+               Class="py-4 px-6 mx-3" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Installer
     </MudButton>
-</div>
-<div class="d-flex justify-center align-center mt-6">
-    <MudButton Size="Size.Small" Variant="Variant.Outlined"
+    <MudButton Size="Size.Large" Variant="Variant.Outlined"
                Href="https://github.com/Sidekick-Poe/Sidekick/releases/latest" Color="Color.Primary"
-               EndIcon="@Icons.Material.Filled.FolderZip" Target="_blank">Portable zip
+               Class="py-4 px-6 mx-3"
+               EndIcon="@Icons.Material.Filled.FolderZip" Target="_blank">Portable (Zip)
     </MudButton>
 </div>
-
-<div class="d-flex justify-center align-center mt-4">
-    <MudText Class="d-block" Style="max-width: 30rem;" Typo="Typo.caption" Align="Align.Center">Get early access to new
-        features with the beta version. Note that the beta version is unstable. Use Discord to report bugs and for
-        support.
-    </MudText>
-</div>
-
-<div class="d-flex justify-center align-center mt-2">
-    <MudButton Size="Size.Small" Variant="Variant.Outlined"
-               Href="https://sidekick-poe.github.io/Sidekick-Beta/Sidekick.application" Color="Color.Primary"
-               EndIcon="@Icons.Material.Filled.Download" Target="_blank">Download Beta
-    </MudButton>
-</div>
+<MudCard Class="mt-6 d-none">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h2" Class="d-flex items-center">Stable Version
+                <MudChip T="string" Variant="Variant.Outlined" Class="ml-2">Recommended</MudChip>
+            </MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudList T="string">
+        <MudListItem T="string">
+            <MudText Typo="Typo.h4">Reliability</MudText>
+            <div>Tested thoroughly to ensure fewer bugs and a smoother experience.</div>
+        </MudListItem>
+        <MudListItem T="string">
+            <MudText Typo="Typo.h4">Updates</MudText>
+            <div>Receives less frequent updates, prioritizing stability over new features.</div>
+        </MudListItem>
+        <MudListItem T="string">
+            <MudText Typo="Typo.h4">Best for</MudText>
+            <div>Users who prefer a hassle-free, stable experience with minimal disruptions.</div>
+        </MudListItem>
+    </MudList>
+    <MudCardContent>
+    </MudCardContent>
+</MudCard>
+<MudCard Class="mt-6">
+    <MudCardContent>
+        <MudText Typo="Typo.h4" Class="mb-2">Beta Version</MudText>
+        <MudText Typo="Typo.subtitle2" Class="white-text">New Features</MudText>
+        <div class="mb-2">Get new tools, functionality, and improvements as they are developed.</div>
+        <MudText Typo="Typo.subtitle2" Class="white-text">Potential Issues</MudText>
+        <div class="mb-2">Might contain bugs, as it is less tested and focuses on rapid updates. Use
+            Discord to report bugs and for
+            support.
+        </div>
+        <MudText Typo="Typo.subtitle2" Class="white-text">Best for</MudText>
+        <div class="mb-2">Enthusiasts who wish to help test and provide feedback on cutting-edge
+            features.
+        </div>
+        <div class="d-flex justify-center align-center mt-2">
+            <MudButton Size="Size.Medium" Variant="Variant.Outlined"
+                       Href="https://github.com/Sidekick-Poe/Sidekick/releases"
+                       Color="Color.Primary" EndIcon="@Icons.Material.Filled.Download" Target="_blank">All
+                Releases
+            </MudButton>
+        </div>
+    </MudCardContent>
+</MudCard>
 
 <div id="installation"></div>
 <MudCard Class="mt-6">
@@ -60,7 +95,9 @@
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">3.</MudText>
                 <MudChip Variant="Variant.Outlined" Color="Color.Warning" Class="ml-6">Optional</MudChip>
-                <div class="ml-6">You may get a security warning when running this software. All the code and repositories are public. You can open the downloaded 'Sidekick.application' file with Notepad to confirm the path.
+                <div class="ml-6">You may get a security warning when running this software. All the code and
+                    repositories are public. You can open the downloaded 'Sidekick.application' file with Notepad to
+                    confirm the path.
                 </div>
             </div>
         </MudListItem>
@@ -99,27 +136,46 @@
     </MudCardHeader>
     <MudCardContent>
         <MudText Typo="Typo.h5">Ensure Sidekick is running</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">By looking at your task manager, you should see Sidekick.exe running. If you don't, you can start it from the start menu by searching for 'Sidekick'.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">By looking at your task manager, you should see Sidekick.exe running. If
+            you don't, you can start it from the start menu by searching for 'Sidekick'.
+        </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Sidekick is running but nothing happens</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Sidekick doesn't have a ton of external dependencies, but if you run into any problems, make sure you have this installed: <MudLink Href="https://developer.microsoft.com/en-us/microsoft-edge/webview2" Target="_blank">WebView 2</MudLink>.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">Sidekick doesn't have a ton of external dependencies, but if you run
+            into any problems, make sure you have this installed:
+            <MudLink Href="https://developer.microsoft.com/en-us/microsoft-edge/webview2" Target="_blank">WebView 2
+            </MudLink>
+            .
+        </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Installer/Updater fails</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Many users are experiencing issues with the installer and auto-updater. If that happens to you, consider trying the portable version (.zip). <MudLink Href="https://github.com/Sidekick-Poe/Sidekick/releases" Target="_blank">https://github.com/Sidekick-Poe/Sidekick/releases</MudLink></MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">Many users are experiencing issues with the installer and auto-updater.
+            If that happens to you, consider trying the portable version (.zip).
+            <MudLink Href="https://github.com/Sidekick-Poe/Sidekick/releases" Target="_blank">
+                https://github.com/Sidekick-Poe/Sidekick/releases
+            </MudLink>
+        </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Anti-virus is stopping the program from running</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Make sure your anti-virus is allowing Sidekick to run. If you are unsure about this, all the code and repositories are public. You can open the downloaded 'Sidekick.application' file with Notepad to confirm the path.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">Make sure your anti-virus is allowing Sidekick to run. If you are unsure
+            about this, all the code and repositories are public. You can open the downloaded 'Sidekick.application'
+            file with Notepad to confirm the path.
+        </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Investigate the log file</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Sidekick has a .log file in %appdata%/sidekick . You can investigate yourself or ask for support on the Discord in the #support channel.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">Sidekick has a .log file in %appdata%/sidekick . You can investigate
+            yourself or ask for support on the Discord in the #support channel.
+        </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">All the above fails</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">If all the above fail, you can reach out on Discord in the #support channel, we are happy to help.</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">If all the above fail, you can reach out on Discord in the #support
+            channel, we are happy to help.
+        </MudText>
     </MudCardContent>
 </MudCard>
 
@@ -303,7 +359,12 @@
 </div>
 
 <MudText Typo="Typo.h3" Class="mt-3">How does Sidekick price check items?</MudText>
-<MudText Typo="Typo.body1">Sidekick actively checks to see if the game is running to determine whether it should listen for keybinds. Once you're in Path of Exile (PoE) and press a designated keybind, Sidekick simulates a Ctrl+C command on your behalf to copy the item's details. It then analyzes the copied information to understand the item you were hovering over. Finally, it fetches pricing data from the Path of Exile Trade website and presents you with the relevant results.</MudText>
+<MudText Typo="Typo.body1">Sidekick actively checks to see if the game is running to determine whether it should listen
+    for keybinds. Once you're in Path of Exile (PoE) and press a designated keybind, Sidekick simulates a Ctrl+C command
+    on your behalf to copy the item's details. It then analyzes the copied information to understand the item you were
+    hovering over. Finally, it fetches pricing data from the Path of Exile Trade website and presents you with the
+    relevant results.
+</MudText>
 
 <div id="about"></div>
 <MudText Typo="Typo.h1" Class="mt-6">About!</MudText>
@@ -446,6 +507,7 @@
 
     private Dictionary<string, string> RecentContributors { get; } = new Dictionary<string, string>()
     {
+        { "Ati1707", "https://github.com/Ati1707" },
         { "warxhead1", "https://github.com/warxhead1" },
         { "Trifall", "https://github.com/Trifall" },
     };
