@@ -16,17 +16,19 @@
             <MudButton Color="Color.Inherit"
                        Href="https://www.buymeacoffee.com/sidekickpoe"
                        Target="_blank">
-                <MudImage Src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></MudImage>
+                <MudImage Src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" title="Support us"></MudImage>
             </MudButton>
 
             <MudIconButton Icon="@Icons.Custom.Brands.GitHub"
                            Color="Color.Inherit"
                            Href="https://github.com/Sidekick-Poe/Sidekick"
+                           title="GitHub repository"
                            Target="_blank"/>
 
             <MudIconButton Icon="@Icons.Custom.Brands.Discord"
                            Color="Color.Inherit"
                            Href="https://discord.gg/H4bg4GQ"
+                           title="Discord server"
                            Target="_blank"/>
         </MudAppBar>
         <MudDrawer @bind-Open="@DrawerOpened" ClipMode="DrawerClipMode.Docked" Variant="DrawerVariant.Responsive">

@@ -2,31 +2,31 @@
 @layout HomeLayout
 
 <div id="download"></div>
-<SidekickLogo/>
-<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">A Path of Exile and Path of Exile 2
+<SidekickLogo />
+<MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">
+    A Path of Exile and Path of Exile 2
     companion tool. Price check
     items, check for dangerous map modifiers, and more!
 </MudText>
 <div class="d-flex justify-center align-center mt-6">
-    <MudButton Size="Size.Large" Variant="Variant.Filled"
-               Href="https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Setup.exe"
-               Color="Color.Primary"
-               Class="py-4 px-6 mx-3" EndIcon="@Icons.Material.Filled.Download" Target="_blank">Installer
+    <MudButton Size="Size.Large" Variant="Variant.Filled" Href="@SetupLink" Color="Color.Primary" Class="py-4 px-6 mx-3"
+               EndIcon="@Icons.Material.Filled.Download" Target="_blank">
+        Installer
     </MudButton>
-    <MudButton Size="Size.Large" Variant="Variant.Outlined"
-               Href="https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip"
-               Color="Color.Primary"
-               Class="py-4 px-6 mx-3"
-               EndIcon="@Icons.Material.Filled.FolderZip" Target="_blank">Portable (Zip)
+    <MudButton Size="Size.Large" Variant="Variant.Outlined" Href="@PortableLink" Color="Color.Primary"
+               Class="py-4 px-6 mx-3" EndIcon="@Icons.Material.Filled.FolderZip" Target="_blank">
+        Portable
+        (Zip)
     </MudButton>
 </div>
 <div class="d-flex justify-center align-center mt-2">
-    <MudText Typo="Typo.caption">Both the installer and portable versions will auto-update.</MudText>
+    <MudText Typo="Typo.caption">(both the installer and portable versions will auto-update)</MudText>
 </div>
 <MudCard Class="mt-6 d-none">
     <MudCardHeader>
         <CardHeaderContent>
-            <MudText Typo="Typo.h2" Class="d-flex items-center">Stable Version
+            <MudText Typo="Typo.h2" Class="d-flex items-center">
+                Stable Version
                 <MudChip T="string" Variant="Variant.Outlined" Class="ml-2">Recommended</MudChip>
             </MudText>
         </CardHeaderContent>
@@ -50,24 +50,22 @@
 </MudCard>
 <MudCard Class="mt-6">
     <MudCardContent>
-        <MudText Typo="Typo.h4" Class="mb-2">Beta Version</MudText>
+        <MudText Typo="Typo.h4" Class="mb-2">Beta Version (pre-release)</MudText>
         <MudText Typo="Typo.subtitle2" Class="white-text">New Features</MudText>
         <div class="mb-2">Get new tools, functionality, and improvements as they are developed.</div>
         <MudText Typo="Typo.subtitle2" Class="white-text">Potential Issues</MudText>
-        <div class="mb-2">Might contain bugs, as it is less tested and focuses on rapid updates. Use
-            Discord to report bugs and for
+        <div class="mb-2">
+            Might contain bugs, as it is less tested and focuses on rapid updates. Use
+            <MudLink Href="@DiscordLink" Target="_blank">Discord</MudLink> to report bugs and for
             support.
         </div>
         <MudText Typo="Typo.subtitle2" Class="white-text">Best for</MudText>
-        <div class="mb-2">Enthusiasts who wish to help test and provide feedback on cutting-edge
+        <div class="mb-2">
+            Enthusiasts who wish to help test and provide feedback on cutting-edge
             features.
         </div>
-        <div class="d-flex justify-center align-center mt-2">
-            <MudButton Size="Size.Medium" Variant="Variant.Outlined"
-                       Href="https://github.com/Sidekick-Poe/Sidekick/releases"
-                       Color="Color.Primary" EndIcon="@Icons.Material.Filled.Download" Target="_blank">All
-                Releases
-            </MudButton>
+        <div class="d-flex justify-center align-center mt-3">
+            <MudButton Size="Size.Medium" Variant="Variant.Outlined" Href="@ReleasesLink" Color="Color.Primary" EndIcon="@Icons.Material.Filled.Download" Target="_blank">All Releases</MudButton>
         </div>
     </MudCardContent>
 </MudCard>
@@ -83,41 +81,49 @@
         <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
-                <div class="ml-6">Download Sidekick from
-                    <MudLink Href="#download">here</MudLink>
-                    .
+                <div class="ml-6">
+                    Download Sidekick using either the <MudLink Href="@SetupLink" Target="_blank">
+                        installer
+                    </MudLink> or <MudLink Href="@PortableLink" Target="_blank">portable version</MudLink>.
                 </div>
             </div>
         </MudListItem>
         <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">2.</MudText>
-                <div class="ml-6">Run Sidekick.application</div>
+                <div class="ml-6">
+                    The installer creates a start menu and desktop shortcut and will automatically launch
+                    Sidekick, which will run in your system tray.
+                </div>
             </div>
         </MudListItem>
         <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">3.</MudText>
-                <MudChip Variant="Variant.Outlined" Color="Color.Warning" Class="ml-6">Optional</MudChip>
-                <div class="ml-6">You may get a security warning when running this software. All the code and
-                    repositories are public. You can open the downloaded 'Sidekick.application' file with Notepad to
-                    confirm the path.
+                <MudChip Variant="Variant.Outlined" Color="Color.Info" Class="ml-6">Optional</MudChip>
+                <div class="ml-3">
+                    You may get a security warning when running this software. All the code and
+                    repositories are public.
                 </div>
             </div>
         </MudListItem>
         <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">4.</MudText>
-                <div class="ml-6">Check your game settings! Make sure your display mode is set to 'Windowed' or
-                    'Windowed Fullscreen'. Sidekick will not work while Path of Exile is in Fullscreen mode.
+                <div class="ml-6">
+                    Check your game settings! Make sure your Path of Exile display mode is set to
+                    <b>Windowed</b> or
+                    <b>Windowed Fullscreen</b> and click save. Sidekick will not work while Path of Exile is in
+                    Fullscreen mode.
                 </div>
             </div>
         </MudListItem>
         <MudListItem T="string">
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">5.</MudText>
-                <div class="ml-6">Enjoy! Report issues or suggestions by communicating in our Discord or by creating an
-                    issue on GitHub.
+                <div class="ml-6">
+                    Enjoy! Report issues or suggestions by communicating in our <MudLink Href="@DiscordLink" Target="_blank">Discord</MudLink> or by creating an
+                    <MudLink Href="https://github.com/Sidekick-Poe/Sidekick" Target="_blank">issue on GitHub</MudLink>.
                 </div>
             </div>
         </MudListItem>
@@ -125,8 +131,7 @@
     <MudCardContent>
         <MudText Typo="Typo.h5">Uninstallation</MudText>
         <MudText Typo="Typo.body1">
-            You may uninstall Sidekick by using Windows Settings => Apps & features. Optionally, you may want to delete
-            additional files. Sidekick stores additional cache and setting files at %AppData%\sidekick.
+            You can uninstall Sidekick just like any other application using <b>Windows Settings => Apps & features</b>. Optionally, you may want to also delete the folder <b>%AppData%\sidekick</b>, which is where Sidekick keeps your settings.
         </MudText>
     </MudCardContent>
 </MudCard>
@@ -140,44 +145,41 @@
     </MudCardHeader>
     <MudCardContent>
         <MudText Typo="Typo.h5">Ensure Sidekick is running</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">By looking at your task manager, you should see Sidekick.exe running. If
-            you don't, you can start it from the start menu by searching for 'Sidekick'.
+        <MudText Typo="Typo.body1" Class="mt-2">
+            By looking at your task manager, you should see <b>Sidekick.exe</b> running. If
+            you don't, you can start it from the start menu by searching for <b>Sidekick</b>.
         </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Sidekick is running but nothing happens</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Sidekick doesn't have a ton of external dependencies, but if you run
-            into any problems, make sure you have this installed:
-            <MudLink Href="https://developer.microsoft.com/en-us/microsoft-edge/webview2" Target="_blank">WebView 2
-            </MudLink>
-            .
+        <MudText Typo="Typo.body1" Class="mt-2">
+            Sidekick doesn't have a ton of external dependencies, but if you run
+            into any problems, make sure you have the <MudLink Href="@WebView2Link" Target="_blank">Microsoft WebView 2</MudLink> installed.
         </MudText>
     </MudCardContent>
     <MudCardContent>
-        <MudText Typo="Typo.h5">Installer/Updater fails</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Many users are experiencing issues with the installer and auto-updater.
-            If that happens to you, consider trying the portable version (.zip).
-            <MudLink Href="https://github.com/Sidekick-Poe/Sidekick/releases" Target="_blank">
-                https://github.com/Sidekick-Poe/Sidekick/releases
-            </MudLink>
+        <MudText Typo="Typo.h5">Installer or setup fails</MudText>
+        <MudText Typo="Typo.body1" Class="mt-2">
+            If you experience an issue with the installer or the auto-updater, consider trying the <MudLink Href="@PortableLink" Target="_blank">portable version</MudLink> instead.
         </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Anti-virus is stopping the program from running</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Make sure your anti-virus is allowing Sidekick to run. If you are unsure
-            about this, all the code and repositories are public. You can open the downloaded 'Sidekick.application'
-            file with Notepad to confirm the path.
+        <MudText Typo="Typo.body1" Class="mt-2">
+            Make sure your anti-virus is not blocking Sidekick. If you want to review the code, all the sources and repositories are public.
         </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">Investigate the log file</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">Sidekick has a .log file in %appdata%/sidekick . You can investigate
-            yourself or ask for support on the Discord in the #support channel.
+        <MudText Typo="Typo.body1" Class="mt-2">
+            Sidekick has .log files in <b>%appdata%/sidekick</b>. You can investigate
+            yourself or ask for support on the <MudLink Href="@DiscordLink" Target="_blank">Discord</MudLink> in the #support channel.
         </MudText>
     </MudCardContent>
     <MudCardContent>
         <MudText Typo="Typo.h5">All the above fails</MudText>
-        <MudText Typo="Typo.body1" Class="mt-2">If all the above fail, you can reach out on Discord in the #support
+        <MudText Typo="Typo.body1" Class="mt-2">
+            If all of the above fails, reach out on <MudLink Href="@DiscordLink" Target="_blank">Discord</MudLink> in the #support
             channel, we are happy to help.
         </MudText>
     </MudCardContent>
@@ -190,13 +192,15 @@
 <MudCard Class="mt-6">
     <MudCardHeader>
         <CardHeaderContent>
-            <MudText Typo="Typo.h2">Price Checking
+            <MudText Typo="Typo.h2">
+                Price Checking
                 <MudChip T="string" Variant="Variant.Outlined">Default Binding: Ctrl+D</MudChip>
             </MudText>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent>
-        <MudText Typo="Typo.body1">Opens a trade view from the official Path of Exile trade API. You can compare and
+        <MudText Typo="Typo.body1">
+            Opens a trade view from the official Path of Exile trade API. You can compare and
             preview items by clicking on any result. For rare items, a price prediction from poeprices.info is shown.
             For unique items, prices from poe.ninja are used.
         </MudText>
@@ -204,10 +208,10 @@
     <div class="px-4 pb-4 pt-2">
         <MudGrid Spacing="2">
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/trade_item.png" Title="Item Trade" Height="220"/>
+                <PicturePreview Image="/assets/images/trade_item.png" Title="Item Trade" Height="220" />
             </MudItem>
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/trade_bulk.png" Title="Bulk Trade" Height="220"/>
+                <PicturePreview Image="/assets/images/trade_bulk.png" Title="Bulk Trade" Height="220" />
             </MudItem>
         </MudGrid>
     </div>
@@ -238,7 +242,8 @@
 <MudCard Class="mt-6">
     <MudCardHeader>
         <CardHeaderContent>
-            <MudText Typo="Typo.h2">Map Information
+            <MudText Typo="Typo.h2">
+                Map Information
                 <MudChip T="string" Variant="Variant.Outlined">Default Binding: Ctrl+X</MudChip>
             </MudText>
         </CardHeaderContent>
@@ -252,10 +257,10 @@
     <div class="px-4 pb-4 pt-2">
         <MudGrid Spacing="2">
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/map_safe.png" Title="Safe" Height="220"/>
+                <PicturePreview Image="/assets/images/map_safe.png" Title="Safe" Height="220" />
             </MudItem>
             <MudItem xs="6">
-                <PicturePreview Image="/assets/images/map_unsafe.png" Title="Unsafe" Height="220"/>
+                <PicturePreview Image="/assets/images/map_unsafe.png" Title="Unsafe" Height="220" />
             </MudItem>
         </MudGrid>
     </div>
@@ -270,28 +275,36 @@
     </MudCardHeader>
     <MudList T="string">
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Go to Hideout
+            <MudText Typo="Typo.h4">
+                Go to Hideout
                 <MudChip Variant="Variant.Outlined">Default Binding: F5</MudChip>
             </MudText>
             Quickly go to your hideout. Writes the following chat command: /hideout
         </MudListItem>
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Leave Party
+            <MudText Typo="Typo.h4">
+                Leave Party
                 <MudChip Variant="Variant.Outlined">Default Binding: F4</MudChip>
             </MudText>
             Quickly leave a party. Writes the following chat command: /leave
         </MudListItem>
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Reply to Last Whisper
-                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Shift+R</MudChip>
+            <MudText Typo="Typo.h4">
+                Reply to Last Whisper
+                <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+Enter</MudChip>
             </MudText>
             Reply to the last whisper received. Starts writing the following chat command: @@{characterName}
         </MudListItem>
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Exit to Character Selection
+            <MudText Typo="Typo.h4">
+                Exit to Character Selection
                 <MudChip Variant="Variant.Outlined">Default Binding: F9</MudChip>
             </MudText>
             Exit to the character selection screen. Writes the following chat command: /exit
+        </MudListItem>
+        <MudListItem T="string">
+            <MudText Typo="Typo.h4">Custom chat commands</MudText>
+            Sidekick provides some useful chat command shortcuts, but you can also create your own custom chat commands.
         </MudListItem>
     </MudList>
 </MudCard>
@@ -305,13 +318,15 @@
     </MudCardHeader>
     <MudList T="string">
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Open Wiki
+            <MudText Typo="Typo.h4">
+                Open Wiki
                 <MudChip Variant="Variant.Outlined">Default Binding: Alt+W</MudChip>
             </MudText>
             Open the item currently under your mouse in your preferred wiki.
         </MudListItem>
         <MudListItem T="string">
-            <MudText Typo="Typo.h4">Find Items
+            <MudText Typo="Typo.h4">
+                Find Items
                 <MudChip Variant="Variant.Outlined">Default Binding: Ctrl+F</MudChip>
             </MudText>
             Searches in your stash or passive tree with the name of the item currently under your mouse.
@@ -351,19 +366,22 @@
 </MudCard>
 
 <div id="faq"></div>
-<MudText Typo="Typo.h1" Class="mt-6">FAQ!</MudText>
+<MudText Typo="Typo.h1" Class="mt-6">FAQ</MudText>
 <MudText Typo="Typo.h3" Class="mt-3">Is this tool allowed by GGG?</MudText>
-<MudText Typo="Typo.body1">The tool is completely allowed to be used inside the games. For the official GGG stance, look
+<MudText Typo="Typo.body1">
+    The tool is completely allowed to be used inside the games. For the official GGG stance, look
     below.
 </MudText>
-<div class="d-flex justify-center align-center mt-1">
+<div class="d-flex justify-center align-center mt-3">
     <MudButton Href="https://www.pathofexile.com/developer/docs#policy" Variant="Variant.Outlined"
-               Color="Color.Primary">Grinding Gear Games Policy
+               Color="Color.Primary">
+        Grinding Gear Games Policy
     </MudButton>
 </div>
 
 <MudText Typo="Typo.h3" Class="mt-3">How does Sidekick price check items?</MudText>
-<MudText Typo="Typo.body1">Sidekick actively checks to see if the game is running to determine whether it should listen
+<MudText Typo="Typo.body1">
+    Sidekick actively checks to see if the game is running to determine whether it should listen
     for keybinds. Once you're in Path of Exile (PoE) and press a designated keybind, Sidekick simulates a Ctrl+C command
     on your behalf to copy the item's details. It then analyzes the copied information to understand the item you were
     hovering over. Finally, it fetches pricing data from the Path of Exile Trade website and presents you with the
@@ -371,7 +389,7 @@
 </MudText>
 
 <div id="about"></div>
-<MudText Typo="Typo.h1" Class="mt-6">About!</MudText>
+<MudText Typo="Typo.h1" Class="mt-6">About</MudText>
 <MudText Class="mt-3">Sidekick for Path of Exile is developed by a group of passionate developers and gamers.</MudText>
 
 <MudGrid Spacing="3" Class="mt-6">
@@ -502,6 +520,12 @@
 
 @code {
 
+    private string SetupLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Setup.exe";
+    private string PortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
+    private string ReleasesLink = "https://github.com/Sidekick-Poe/Sidekick/releases";
+    private string WebView2Link = "https://developer.microsoft.com/en-us/microsoft-edge/webview2";
+    private string DiscordLink = "https://discord.gg/H4bg4GQ";
+
     private Dictionary<string, string> MajorContributors { get; } = new Dictionary<string, string>()
     {
         { "domialex", "https://github.com/domialex" },
@@ -536,7 +560,6 @@
         { "PeteyPii", "https://github.com/PeteyPii" },
     };
 
-
     private Dictionary<string, string> ThirdParties { get; } = new Dictionary<string, string>()
     {
         { "Path of Exile Trade", "https://www.pathofexile.com/trade" },
@@ -551,5 +574,4 @@
         { "SharpHook", "https://github.com/TolikPylypchuk/SharpHook" },
         { "TextCopy", "https://github.com/CopyText/TextCopy" },
     };
-
 }
