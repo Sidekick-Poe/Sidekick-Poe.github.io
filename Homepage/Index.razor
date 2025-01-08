@@ -1,13 +1,19 @@
 ﻿@page "/"
 @layout HomeLayout
 
-<div id="download"></div>
 <SidekickLogo />
+
 <MudText Class="mt-3 mx-auto" Align="Align.Center" Style="max-width: 40rem;">
-    A Path of Exile and Path of Exile 2
-    companion tool. Price check
-    items, check for dangerous map modifiers, and more!
+    A Path of Exile and Path of Exile 2 companion tool.<br />
+    Price check items, check for dangerous map modifiers, and more!
 </MudText>
+
+<div class="d-flex justify-center align-center mt-1">
+    <MudLink Href="@DiscordLink" Target="_blank" Class="mx-auto">
+        <MudImage Src="https://img.shields.io/discord/664252463188279300?color=%23738AD6&label=Discord" />
+    </MudLink>
+</div>
+
 <div class="d-flex justify-center align-center mt-6">
     <MudButton Size="Size.Large" Variant="Variant.Filled" Href="@SetupLink" Color="Color.Primary" Class="py-4 px-6 mx-3"
                EndIcon="@Icons.Material.Filled.Download" Target="_blank">
@@ -22,6 +28,7 @@
 <div class="d-flex justify-center align-center mt-2">
     <MudText Typo="Typo.caption">(both the installer and portable versions will auto-update)</MudText>
 </div>
+
 <MudCard Class="mt-6 d-none">
     <MudCardHeader>
         <CardHeaderContent>
@@ -82,9 +89,7 @@
             <div class="d-flex align-center">
                 <MudText Typo="Typo.h4">1.</MudText>
                 <div class="ml-6">
-                    Download Sidekick using either the <MudLink Href="@SetupLink" Target="_blank">
-                        installer
-                    </MudLink> or <MudLink Href="@PortableLink" Target="_blank">portable version</MudLink>.
+                    Download Sidekick using either the <MudLink Href="@SetupLink" Target="_blank"><b>installer</b></MudLink> or <MudLink Href="@PortableLink" Target="_blank"><b>portable version</b></MudLink>.
                 </div>
             </div>
         </MudListItem>
