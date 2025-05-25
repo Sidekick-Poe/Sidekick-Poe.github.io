@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Microsoft.AspNetCore.Components.dll": "sha256-NoNVa79JHpg276t+rTRU9YeCO7ExWMjTIhEZ\/Dj+VVo=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-ri0bO\/+OTIkFSPOatLoBQaPaRz14Rb\/sh72UJpSPa4k=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-iKpHfcBf3oEKpxb7sz9pTyZDVx52YLCiRMugS2MXX7w=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0h0g5oKret\/\/Sbli12ztMSPxRLk71pg+WbCxiQITNwI=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-AgaYvJ1gOhSi\/3H87VHJmZ9sYe9u9GOliLHBzLpUO3s=",
@@ -25,7 +25,7 @@
       "Microsoft.JSInterop.dll": "sha256-mxvpwYV4ZO8fA\/NyBYXsHnEt78CHZI\/5aVmb3KvLmIw=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-lYAF3xsVc35AdX17BqNph1FHdZmEZqR3zpquRPeKF2k=",
       "MudBlazor.dll": "sha256-KI0\/ytidq6uvLIb9QtIAkTtMpNMxTo1CGUNwZIde188=",
-      "Sidekick.Pages.dll": "sha256-vJ\/Wqu8ok7qltsKMBSTe8h1uzhiOzm9nFjavhd6jmbs=",
+      "Sidekick.Pages.dll": "sha256-n3DbiiG0bfT5HLeI9bdtCzoDTXrk5InsxzLS+IyL6oc=",
       "System.Collections.Concurrent.dll": "sha256-W2Xayq0vlucLhUTIPM\/SIWcobA9aZBaF06HugNe4WpU=",
       "System.Collections.dll": "sha256-NC2Ef3crsGsi6PSbdfd3Aa+EiXLa2sGtVlcnhrrl4OU=",
       "System.ComponentModel.Annotations.dll": "sha256-zmKkhH+m4KC\/5z641Vw9tNT0zZ5k+pmSWef8ykRtcY0=",
