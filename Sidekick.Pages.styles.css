@@ -34,7 +34,7 @@ div[b-nt8ttzzaaz] {
 .icon[b-vy6gk2g69o] {
     width: 48px;
     height: 48px;
-    margin-top: calc(-4px * 2);
+    min-width: 48px;
     margin-right: 2px;
     padding: 0 5px;
 }
