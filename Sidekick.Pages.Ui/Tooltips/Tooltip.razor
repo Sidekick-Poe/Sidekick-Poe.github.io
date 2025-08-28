@@ -1,0 +1,47 @@
+<FlowbiteComponent Script="tooltip"
+                   ScriptParameters="@(new[]
+                                     {
+                                         Id,
+                                         Placement.GetValueAttribute(),
+                                     })">
+    @if (ChildContent is not null)
+    {
+        @ChildContent
+    }
+    else
+    {
+        <Icon Svg="@UiIcons.Help" Class="text-violet-500 flex self-center cursor-help"/>
+    }
+</FlowbiteComponent>
+
+<div id="@Id" role="tooltip" class="bg-stone-950 p-2 max-w-60 rounded-lg border border-solid border-stone-800
+            absolute z-10 invisible transition-opacity duration-300 shadow-xs opacity-0 tooltip">
+    @if (TooltipContent is not null)
+    {
+        @TooltipContent
+    }
+    else
+    {
+        <div class="text-center text-sm leading-4">@Text</div>
+    }
+</div>
+
+@using Sidekick.Common.Enums
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? TooltipContent { get; set; }
+
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter]
+    public TooltipPlacement Placement { get; set; } = TooltipPlacement.Top;
+
+    protected string Id { get; } = UiUtilities.GenerateId();
+
+}

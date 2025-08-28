@@ -1,0 +1,67 @@
+﻿@page "/"
+
+<LayoutMenu>
+    <ChildContent>
+        <div class="flex items-center justify-center p-2 bg-stone-950 gap-4">
+            <AppLogo />
+            <TextCaption>This product isn't affiliated with or endorsed by Grinding Gear Games in any way.</TextCaption>
+        </div>
+    </ChildContent>
+</LayoutMenu>
+
+@code {
+    private string SetupLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Setup.exe";
+    private string PortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
+    private string ReleasesLink = "https://github.com/Sidekick-Poe/Sidekick/releases";
+    private string WebView2Link = "https://developer.microsoft.com/en-us/microsoft-edge/webview2";
+    private string DiscordLink = "https://discord.gg/R9HyCpV";
+
+    private Dictionary<string, string> MajorContributors { get; } = new Dictionary<string, string>()
+    {
+        { "domialex", "https://github.com/domialex" },
+        { "leMicin", "https://github.com/leMicin" },
+        { "mwardrop", "https://github.com/mwardrop" },
+    };
+
+    private Dictionary<string, string> RecentContributors { get; } = new Dictionary<string, string>()
+    {
+        { "Ati1707", "https://github.com/Ati1707" },
+        { "warxhead1", "https://github.com/warxhead1" },
+        { "Trifall", "https://github.com/Trifall" },
+    };
+
+    private Dictionary<string, string> Translators { get; } = new Dictionary<string, string>()
+    {
+        { "EasyBabi", "https://www.youtube.com/@EasyBabi" },
+        { "aprils148", "https://github.com/aprils148" },
+    };
+
+    private Dictionary<string, string> OtherContributors { get; } = new Dictionary<string, string>()
+    {
+        { "Blinke", "https://github.com/Blinke" },
+        { "Zalhera", "https://github.com/Zalhera" },
+        { "cmos12345", "https://github.com/cmos12345" },
+        { "kai-oswald", "https://github.com/kai-oswald" },
+        { "Arisix", "https://github.com/Arisix" },
+        { "dandrew-xx", "https://github.com/dandrew-xx" },
+        { "pobiega", "https://github.com/pobiega" },
+        { "lascoin", "https://github.com/lascoin" },
+        { "vestakip", "https://github.com/vestakip" },
+        { "PeteyPii", "https://github.com/PeteyPii" },
+    };
+
+    private Dictionary<string, string> ThirdParties { get; } = new Dictionary<string, string>()
+    {
+        { "Path of Exile Trade", "https://www.pathofexile.com/trade" },
+        { "poe.ninja", "https://poe.ninja/" },
+        { "poeprices.info", "https://www.poeprices.info/" },
+        { "poewiki.net", "https://www.poewiki.net/" },
+        { "poedb.tw", "https://poedb.tw/us/" },
+        { "Awakened PoE Trade", "https://github.com/SnosMe/awakened-poe-trade" },
+        { "POE-TradeMacro", "https://github.com/PoE-TradeMacro/POE-TradeMacro" },
+        { "FuzzySharp", "https://github.com/JakeBayer/FuzzySharp" },
+        { "Hardcodet NotifyIcon for WPF", "https://github.com/hardcodet/wpf-notifyicon" },
+        { "SharpHook", "https://github.com/TolikPylypchuk/SharpHook" },
+        { "TextCopy", "https://github.com/CopyText/TextCopy" },
+    };
+}
