@@ -1,15 +1,18 @@
 ﻿@page "/"
 
 <LayoutMenu>
-    <ChildContent>
-        <AppContainer>
-            <div class="flex items-center justify-center p-2 gap-4">
-                <AppLogo/>
-                <TextCaption>This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
-                </TextCaption>
-            </div>
-        </AppContainer>
-    </ChildContent>
+    <AppContainer>
+        <div class="flex flex-col items-stretch gap-6">
+            <HomeIntroduction/>
+            <HomeDownload/>
+        </div>
+
+        <div class="flex items-center justify-center p-2 gap-4">
+            <AppLogo/>
+            <TextCaption>This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+            </TextCaption>
+        </div>
+    </AppContainer>
 </LayoutMenu>
 
 @code {
