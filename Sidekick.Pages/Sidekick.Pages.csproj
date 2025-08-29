@@ -21,6 +21,10 @@
       <ProjectReference Include="..\Sidekick.Pages.Ui\Sidekick.Pages.Ui.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\PicturePreview.razor" />
+    </ItemGroup>
+
     <Target Name="Copywwwroot" BeforeTargets="Build">
         <ItemGroup>
             <WwwRootFiles Include="$(ProjectDir)..\Sidekick.Pages.Ui\wwwroot\**\*.*"/>

@@ -1,6 +1,13 @@
+
+@inherits FlowbiteComponent
+
 <div class="h-full flex flex-col">
     <div class="dark:bg-stone-950">
-        <AppBar/>
+        <NavBar>
+            <AppDiscord/>
+            <AppGitHub/>
+            <AppBuyMeACoffeeButton/>
+        </NavBar>
     </div>
     <div class="grow flex flex-nowrap items-stretch">
         <div class="relative overflow-auto min-w-48 z-10">

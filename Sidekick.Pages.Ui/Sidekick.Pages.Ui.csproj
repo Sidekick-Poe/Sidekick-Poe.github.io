@@ -19,6 +19,14 @@
       <ProjectReference Include="..\Sidekick.Pages.Common\Sidekick.Pages.Common.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Popovers\Popover.razor" />
+      <UpToDateCheckInput Remove="Tooltips\Tooltip.razor" />
+      <UpToDateCheckInput Remove="Chips\ChipCustom.razor" />
+      <UpToDateCheckInput Remove="Alerts\AlertError.razor" />
+      <UpToDateCheckInput Remove="Alerts\AlertInfo.razor" />
+    </ItemGroup>
+
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
         <Exec Command="npm run build" />
     </Target>

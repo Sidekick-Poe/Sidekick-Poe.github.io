@@ -1,7 +1,5 @@
-import popover from "./flowbite/popover";
-import tooltip from "./flowbite/tooltip";
+import { initFlowbite } from 'flowbite'
 
 window.sidekick = {
-    popover,
-    tooltip,
+    initializeFlowbite: initFlowbite,
 };
