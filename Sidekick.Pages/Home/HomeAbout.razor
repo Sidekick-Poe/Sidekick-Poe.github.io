@@ -2,9 +2,9 @@
     <Heading1 Class="text-center">About</Heading1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card Title="Major Contributors">
+        <Card Title="Core Contributors">
             <ul class="flex flex-col gap-2">
-                @foreach (var (name, link) in MajorContributors)
+                @foreach (var (name, link) in CoreContributors)
                 {
                     <li>
                         <a href="@link" target="_blank"
@@ -38,7 +38,7 @@
             </ul>
         </Card>
 
-        <Card Title="Other Contributors">
+        <Card Title="Contributors">
             <ul class="grid grid-cols-2 gap-2">
                 @foreach (var (name, link) in OtherContributors)
                 {
@@ -54,7 +54,7 @@
             <Card Title="Path of Exile Community">
                 <div class="flex flex-col gap-4">
                     <TextBase>
-                        Sidekick is made possible due to the amazing Path of Exile community. Here are some shoutouts.
+                        Sidekick is made possible by the Path of Exile community and the tools it’s built around. Here are some projects and resources we’d like to thank.
                     </TextBase>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                         @foreach (var (name, link) in PathOfExileCommunity)
@@ -71,7 +71,7 @@
         </div>
 
         <div class="md:col-span-2">
-            <Card Title="Third Parties">
+            <Card Title="Third-Party Libraries">
                 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                     @foreach (var (name, link) in ThirdParties)
                     {
@@ -88,7 +88,7 @@
 
 @code {
 
-    private Dictionary<string, string> MajorContributors { get; } = new()
+    private Dictionary<string, string> CoreContributors { get; } = new()
     {
         { "domialex", "https://github.com/domialex" },
         { "leMicin", "https://github.com/leMicin" },
