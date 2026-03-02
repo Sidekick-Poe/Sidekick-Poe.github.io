@@ -1,0 +1,60 @@
+<div id="troubleshooting">
+    <Card Title="Troubleshooting Steps">
+        <div class="flex flex-col gap-6">
+            <div>
+                <Heading3 Class="mb-1">Ensure Sidekick is running</Heading3>
+                <TextBase>
+                    By looking at your task manager, you should see <b>Sidekick.exe</b> running. If you don't, you can
+                    start it from the start menu by searching for <b>Sidekick</b>.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Sidekick is running but nothing happens</Heading3>
+                <TextBase>
+                    Sidekick doesn't have a ton of external dependencies, but if you run into any problems, make sure
+                    you have the <a href="@WebView2Link" target="_blank"
+                                    class="text-violet-700 dark:text-violet-400 hover:underline">Microsoft WebView 2</a>
+                    installed.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Installer or setup fails</Heading3>
+                <TextBase>
+                    If you experience an issue with the installer or the auto-updater, consider trying the <a
+                        href="@WindowsPortableLink" target="_blank"
+                        class="text-violet-700 dark:text-violet-400 hover:underline">portable version</a> instead.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Anti-virus is stopping the program from running</Heading3>
+                <TextBase>
+                    Make sure your anti-virus is not blocking Sidekick. If you want to review the code, all the sources
+                    and repositories are public.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Investigate the log file</Heading3>
+                <TextBase>
+                    Sidekick has .log files in <b>%appdata%/sidekick</b>. You can investigate yourself or ask for
+                    support on the <a href="@DiscordLink" target="_blank"
+                                      class="text-violet-700 dark:text-violet-400 hover:underline">Discord</a> in the
+                    #support channel.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">All the above fails</Heading3>
+                <TextBase>
+                    If all of the above fails, reach out on <a href="@DiscordLink" target="_blank"
+                                                               class="text-violet-700 dark:text-violet-400 hover:underline">Discord</a>
+                    in the #support channel, we are happy to help.
+                </TextBase>
+            </div>
+        </div>
+    </Card>
+</div>
+
+@code {
+    private string WindowsPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
+    private string WebView2Link = "https://developer.microsoft.com/en-us/microsoft-edge/webview2";
+    private string DiscordLink = "https://discord.gg/R9HyCpV";
+}

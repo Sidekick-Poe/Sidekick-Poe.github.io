@@ -1,0 +1,18 @@
+<div class="p-6 border rounded-lg shadow bg-stone-800 border-stone-700 @Class">
+    @if (Title != null)
+    {
+        <Heading2 Class="mb-4">@Title</Heading2>
+    }
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+}

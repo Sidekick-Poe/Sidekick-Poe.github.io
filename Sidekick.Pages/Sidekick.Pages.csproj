@@ -25,6 +25,11 @@
       <_ContentIncludedByDefault Remove="Components\PicturePreview.razor" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Layouts\LayoutMenu.razor" />
+      <AdditionalFiles Include="Layouts\LayoutSimple.razor" />
+    </ItemGroup>
+
     <Target Name="Copywwwroot" BeforeTargets="Build">
         <ItemGroup>
             <WwwRootFiles Include="$(ProjectDir)..\Sidekick.Pages.Ui\wwwroot\**\*.*"/>

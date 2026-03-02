@@ -1,0 +1,28 @@
+@inherits FlowbiteComponent
+
+<NavBar>
+    <NavItem Href="#installation">Installation</NavItem>
+    <NavItem Href="#features">Features</NavItem>
+    <NavItem Href="#faq">FAQ</NavItem>
+    <NavItem Href="#troubleshooting">Troubleshooting</NavItem>
+    <NavItem Href="#about">About</NavItem>
+    <div class="flex items-center gap-x-4 gap-y-2 md:ml-4 flex-wrap">
+        <AppDiscord/>
+        <AppGitHub/>
+        <AppBuyMeACoffeeButton/>
+    </div>
+</NavBar>
+
+@ChildContent
+
+<div class="flex items-center justify-center p-2 gap-4 mt-10">
+    <AppLogo/>
+    <TextCaption>This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+    </TextCaption>
+</div>
+
+@code {
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+}

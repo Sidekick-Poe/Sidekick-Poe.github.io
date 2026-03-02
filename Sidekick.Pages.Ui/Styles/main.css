@@ -2,11 +2,11 @@
 
 @import './fonts.css' layer(base);
 
-@import "tailwindcss" source('../../**/*.{razor,html,cshtml,cs}');
+@import 'tailwindcss' source('../../**/*.{razor,html,cshtml,cs,js}');
+@import './loading.css';
 
 @plugin 'flowbite/plugin';
 
-@source '../**/*.js';
 @source not "../node_modules";
 @source not "../wwwroot";
 @source not "../../**/wwwroot";
@@ -14,10 +14,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font- *: initial;
     --font-sans: fontin, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-caps: fontin-smallcaps, fontin, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --text- *: initial;
     --text-xs: 0.625rem;
     --text-sm: 0.75rem;
     --text-base: 0.875rem;
@@ -69,3 +67,7 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #57534e;
     }
+
+html {
+    scroll-padding-top: 5rem;
+}
