@@ -1,22 +1,20 @@
 <div id="installation" class="flex flex-col gap-6">
     <div class="flex flex-col items-center gap-3">
         <AppLogo/>
-        <TextBase Class="text-center">A Path of Exile and Path of Exile 2 companion tool. Price check items, check for
-            dangerous map modifiers, and more!
+        <TextBase Class="text-center">A companion application for Path of Exile and Path of Exile 2. Open an item
+            overlay to price check items, view your wealth, use chat commands, and more!
         </TextBase>
     </div>
 
-    <div class="flex items-center justify-center gap-3">
+    <div class="flex flex-wrap items-center justify-center gap-3">
         <ButtonPrimary Href="@WindowsSetupLink" Target="_blank">
             Installer
         </ButtonPrimary>
         <ButtonSecondary Href="@WindowsPortableLink" Target="_blank">
-            Portable
-            (Zip)
+            Portable (Zip)
         </ButtonSecondary>
         <ButtonSecondary Href="@LinuxPortableLink" Target="_blank">
-            Linux
-            (AppImage)
+            Linux (AppImage)
         </ButtonSecondary>
     </div>
     <Card Title="Installation and Usage">
@@ -26,49 +24,47 @@
                 <div class="pt-1">
                     Download Sidekick using either the <a href="@WindowsSetupLink" target="_blank"
                                                           class="text-violet-700 dark:text-violet-400 font-bold hover:underline">installer</a>
-                    or <a href="@WindowsPortableLink" target="_blank"
-                          class="text-violet-700 dark:text-violet-400 font-bold hover:underline">portable version</a>.
+                    (recommended)
+                    or the <a href="@WindowsPortableLink" target="_blank"
+                              class="text-violet-700 dark:text-violet-400 font-bold hover:underline">portable
+                        version</a>.
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <Heading3>2.</Heading3>
                 <div class="pt-1">
-                    The installer creates a start menu and desktop shortcut and will automatically launch Sidekick,
-                    which will run in your system tray.
+                    The installer adds Start Menu/Desktop shortcuts and launches Sidekick in your <strong>system
+                        tray</strong>.
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <Heading3>3.</Heading3>
-                <div class="flex items-center gap-2 pt-1">
-                    <span
-                        class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 border border-blue-400">Optional</span>
-                    <span>You may get a security warning when running this software. All the code and repositories are public.</span>
-                </div>
+                <Chip>Optional</Chip>
+                <span>You may see a security prompt on first run. Sidekick is open source—our code and releases are publicly available.</span>
             </div>
             <div class="flex items-start gap-4">
                 <Heading3>4.</Heading3>
                 <div class="pt-1">
-                    Check your game settings! Make sure your Path of Exile display mode is set to <b>Windowed</b> or <b>Windowed
-                        Fullscreen</b> and click save. Sidekick will not work while Path of Exile is in Fullscreen mode.
+                    Check your in-game display mode: set Path of Exile to <strong>Windowed</strong> or <strong>Windowed
+                        Fullscreen</strong>. Sidekick won’t work in <strong>Fullscreen</strong> mode.
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <Heading3>5.</Heading3>
                 <div class="pt-1">
-                    Enjoy! Report issues or suggestions by communicating in our <a href="@DiscordLink" target="_blank"
-                                                                                   class="text-violet-700 dark:text-violet-400 hover:underline">Discord</a>
-                    or by creating an <a href="https://github.com/Sidekick-Poe/Sidekick" target="_blank"
-                                         class="text-violet-700 dark:text-violet-400 hover:underline">issue on
-                        GitHub</a>.
+                    Have feedback or found a bug? Reach out on
+                    <a href="@DiscordLink" target="_blank"
+                       class="text-violet-700 dark:text-violet-400 hover:underline">Discord</a>
+                    or open an issue on
+                    <a href="https://github.com/Sidekick-Poe/Sidekick" target="_blank"
+                       class="text-violet-700 dark:text-violet-400 hover:underline">GitHub</a>.
                 </div>
             </div>
 
             <div class="mt-4 pt-4 border-t border-stone-200 dark:border-stone-700">
-                <Heading3 Class="mb-2">Uninstallation</Heading3>
+                <Heading3 Class="mb-2">Uninstallation (Windows)</Heading3>
                 <TextBase>
-                    You can uninstall Sidekick just like any other application using <b>Windows Settings => Apps &
-                        features</b>. Optionally, you may want to also delete the folder <b>%AppData%\sidekick</b>,
-                    which is where Sidekick keeps your settings.
+                    Uninstall Sidekick like any other application via <strong>Windows Settings → Apps</strong>. If you want a clean reset, also delete <strong>%AppData%\sidekick</strong> to remove saved settings.
                 </TextBase>
             </div>
         </div>
