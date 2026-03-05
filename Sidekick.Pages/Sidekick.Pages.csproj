@@ -12,6 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Sidekick.Pages.Ui\Sidekick.Pages.Ui.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
         <Content Update="wwwroot\**">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>

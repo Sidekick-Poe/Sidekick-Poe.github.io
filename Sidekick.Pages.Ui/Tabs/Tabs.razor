@@ -1,0 +1,43 @@
+﻿<CascadingValue Value="this">
+    <div class="flex flex-col @Class">
+        <div class="flex border-b border-stone-700">
+            @foreach (var tab in TabPanels)
+            {
+                <button type="button"
+                        class="px-4 py-2 text-sm font-medium transition-colors border-b-2 @(ActiveTab == tab ? "text-violet-400 border-violet-400" : "text-neutral-400 border-transparent hover:text-neutral-200 hover:border-stone-600")"
+                        @onclick="() => ActivateTab(tab)">
+                    @tab.Title
+                </button>
+            }
+        </div>
+        <div class="pt-4">
+            @ChildContent
+        </div>
+    </div>
+</CascadingValue>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+
+    private List<TabPanel> TabPanels { get; set; } = new();
+
+    public TabPanel? ActiveTab { get; private set; }
+
+    internal void AddTab(TabPanel tab)
+    {
+        TabPanels.Add(tab);
+        ActiveTab ??= tab;
+        StateHasChanged();
+    }
+
+    private void ActivateTab(TabPanel tab)
+    {
+        ActiveTab = tab;
+    }
+
+}

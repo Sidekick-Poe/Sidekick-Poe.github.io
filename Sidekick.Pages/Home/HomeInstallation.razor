@@ -17,6 +17,7 @@
             Linux (AppImage)
         </ButtonSecondary>
     </div>
+
     <Card Title="Installation and Usage">
         <div class="flex flex-col gap-4">
             <div class="flex items-start gap-4">
@@ -69,6 +70,54 @@
                 a clean reset, also delete <strong>%AppData%\sidekick</strong> to remove saved settings.
             </TextBase>
         </div>
+    </Card>
+
+    <Card Title="Pre-requisites">
+        <TextBase Class="mb-3">These prerequisites cover the <strong>core runtime and system dependencies</strong>
+            Sidekick needs to install, launch, and display its UI correctly on each platform. We recommend installing
+            them first to ensure a smooth setup and avoid common “missing dependency” errors.
+        </TextBase>
+        <Tabs>
+            <TabPanel Title="Windows">
+                <Heading3 Class="mb-3">Windows requirements</Heading3>
+                <TextBase>
+                    Ensure you have the latest <strong>.NET 8.0 Desktop Runtime</strong> installed before running the
+                    installer. You can download it
+                    <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0" target="_blank"
+                       class="text-violet-400 hover:underline">here</a>.
+                </TextBase>
+            </TabPanel>
+
+            <TabPanel Title="Linux">
+                <Heading3 Class="mb-3">Linux requirements</Heading3>
+                <div class="flex flex-col gap-3">
+                    <TextBase>Sidekick requires the following packages to be installed:</TextBase>
+                    <div class="flex flex-col gap-2">
+                        <div>
+                            <TextBase Class="font-bold">Arch-based</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo pacman -S --needed xsel
+                                webkit2gtk-4.1 dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Ubuntu</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo apt install xsel
+                                libwebkit2gtk-4.1-0 dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Fedora</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo dnf install xsel webkit2gtk4.1
+                                dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Download and run</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">wget
+                                https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-stable.AppImage<br/>chmod
+                                +x Sidekick-linux-stable.AppImage<br/>./Sidekick-linux-stable.AppImage</code>
+                        </div>
+                    </div>
+                </div>
+            </TabPanel>
+        </Tabs>
     </Card>
 </div>
 
