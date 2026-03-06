@@ -26,8 +26,8 @@
             </ul>
         </Card>
 
-        <Card Title="Translators">
-            <ul class="flex flex-col gap-2">
+        <Card Title="Translators" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 @foreach (var (name, link) in Translators)
                 {
                     <li>
@@ -38,8 +38,8 @@
             </ul>
         </Card>
 
-        <Card Title="Contributors">
-            <ul class="grid grid-cols-2 gap-2">
+        <Card Title="Other Contributors" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 @foreach (var (name, link) in OtherContributors)
                 {
                     <li>
@@ -50,30 +50,14 @@
             </ul>
         </Card>
 
-        <div class="md:col-span-2">
-            <Card Title="Path of Exile Community">
-                <div class="flex flex-col gap-4">
-                    <TextBase>
-                        Sidekick is made possible by the Path of Exile community and the tools it’s built around. Here are some projects and resources we’d like to thank.
-                    </TextBase>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                        @foreach (var (name, link) in PathOfExileCommunity)
-                        {
-                            <li>
-                                <a href="@link" target="_blank"
-                                   class="text-violet-400 hover:underline">@name</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </Card>
-
-        </div>
-
-        <div class="md:col-span-2">
-            <Card Title="Third-Party Libraries">
+        <Card Title="Path of Exile Community" Class="md:col-span-2">
+            <div class="flex flex-col gap-4">
+                <TextBase>
+                    Sidekick is made possible by the Path of Exile community and the tools it’s built around. Here
+                    are some projects and resources we’d like to thank.
+                </TextBase>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                    @foreach (var (name, link) in ThirdParties)
+                    @foreach (var (name, link) in PathOfExileCommunity)
                     {
                         <li>
                             <a href="@link" target="_blank"
@@ -81,8 +65,20 @@
                         </li>
                     }
                 </ul>
-            </Card>
-        </div>
+            </div>
+        </Card>
+
+        <Card Title="Third-Party Libraries" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                @foreach (var (name, link) in ThirdParties)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
     </div>
 </div>
 
@@ -92,14 +88,11 @@
     {
         { "domialex", "https://github.com/domialex" },
         { "leMicin", "https://github.com/leMicin" },
-        { "mwardrop", "https://github.com/mwardrop" },
     };
 
     private Dictionary<string, string> RecentContributors { get; } = new()
     {
-        { "Ati1707", "https://github.com/Ati1707" },
-        { "warxhead1", "https://github.com/warxhead1" },
-        { "Trifall", "https://github.com/Trifall" },
+        { "FatterCat", "https://github.com/FatterCatDev" },
     };
 
     private Dictionary<string, string> Translators { get; } = new()
@@ -110,6 +103,10 @@
 
     private Dictionary<string, string> OtherContributors { get; } = new()
     {
+        { "mwardrop", "https://github.com/mwardrop" },
+        { "Ati1707", "https://github.com/Ati1707" },
+        { "warxhead1", "https://github.com/warxhead1" },
+        { "Trifall", "https://github.com/Trifall" },
         { "Blinke", "https://github.com/Blinke" },
         { "Zalhera", "https://github.com/Zalhera" },
         { "cmos12345", "https://github.com/cmos12345" },
