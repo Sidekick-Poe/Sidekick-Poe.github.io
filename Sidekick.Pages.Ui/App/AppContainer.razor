@@ -1,0 +1,10 @@
+<div class="p-4 max-w-[800px] mx-auto">
+    @ChildContent
+</div>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}

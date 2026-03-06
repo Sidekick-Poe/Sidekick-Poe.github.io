@@ -1,0 +1,11 @@
+﻿<div class="text-sm text-neutral-400 leading-none @Class">@ChildContent</div>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+
+}

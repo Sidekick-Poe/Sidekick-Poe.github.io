@@ -1,0 +1,9 @@
+﻿
+<li>
+    <a href="@Href" class="block py-2 px-3 rounded-sm md:border-0 md:p-0 text-white md:hover:text-violet-500 hover:bg-stone-700 hover:text-white md:hover:bg-transparent">@ChildContent</a>
+</li>
+
+@code {
+    [Parameter] public string Href { get; set; } = "#";
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

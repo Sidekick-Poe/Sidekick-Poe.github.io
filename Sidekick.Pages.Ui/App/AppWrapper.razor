@@ -1,0 +1,9 @@
+<div class="font-sans w-full min-h-[100vh] bg-stone-900 text-white text-base">
+    @ChildContent
+</div>
+
+@code {
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+}

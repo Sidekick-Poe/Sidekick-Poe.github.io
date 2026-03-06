@@ -1,0 +1,25 @@
+<div class="p-6 border rounded-lg shadow bg-stone-800 border-stone-700 flex flex-col gap-4 @Class">
+    <div>
+        @if (TitleContent != null)
+        {
+            @TitleContent
+        }
+        else if (Title != null)
+        {
+            <Heading2>@Title</Heading2>
+        }
+    </div>
+    <div>
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter] public string? Title { get; set; }
+
+    [Parameter] public RenderFragment? TitleContent { get; set; }
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    [Parameter] public string? Class { get; set; }
+}

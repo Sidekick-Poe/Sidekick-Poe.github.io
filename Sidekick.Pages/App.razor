@@ -1,0 +1,24 @@
+﻿<AppWrapper>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData"/>
+        </Found>
+        <NotFound>
+            <LayoutView>
+                <LayoutSimple>
+                    <TopContent>
+                        <AppLogo/>
+                    </TopContent>
+
+                    <ChildContent>
+                        <AlertError>
+                            <TextBase Class="text-center">Page not found.</TextBase>
+                        </AlertError>
+                    </ChildContent>
+                </LayoutSimple>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</AppWrapper>
+
+<AnchorNavigation />

@@ -1,0 +1,11 @@
+.loading-page {
+    @apply p-8 text-center text-neutral-300;
+
+    .sr-only {
+        @apply sr-only;
+    }
+}
+
+.loading-page-spinner {
+    @apply inline w-8 h-8 text-neutral-300 animate-spin fill-violet-500;
+}

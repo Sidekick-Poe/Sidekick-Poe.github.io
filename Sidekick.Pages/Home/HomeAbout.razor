@@ -1,0 +1,147 @@
+<div class="flex flex-col gap-6" id="about">
+    <Heading1 Class="text-center">About</Heading1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card Title="Core Contributors">
+            <ul class="flex flex-col gap-2">
+                @foreach (var (name, link) in CoreContributors)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
+
+        <Card Title="Recent Contributors">
+            <ul class="flex flex-col gap-2">
+                @foreach (var (name, link) in RecentContributors)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
+
+        <Card Title="Translators" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                @foreach (var (name, link) in Translators)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
+
+        <Card Title="Other Contributors" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                @foreach (var (name, link) in OtherContributors)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
+
+        <Card Title="Path of Exile Community" Class="md:col-span-2">
+            <div class="flex flex-col gap-4">
+                <TextBase>
+                    Sidekick is made possible by the Path of Exile community and the tools it’s built around. Here
+                    are some projects and resources we’d like to thank.
+                </TextBase>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    @foreach (var (name, link) in PathOfExileCommunity)
+                    {
+                        <li>
+                            <a href="@link" target="_blank"
+                               class="text-violet-400 hover:underline">@name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </Card>
+
+        <Card Title="Third-Party Libraries" Class="md:col-span-2">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                @foreach (var (name, link) in ThirdParties)
+                {
+                    <li>
+                        <a href="@link" target="_blank"
+                           class="text-violet-400 hover:underline">@name</a>
+                    </li>
+                }
+            </ul>
+        </Card>
+    </div>
+</div>
+
+@code {
+
+    private Dictionary<string, string> CoreContributors { get; } = new()
+    {
+        { "domialex", "https://github.com/domialex" },
+        { "leMicin", "https://github.com/leMicin" },
+    };
+
+    private Dictionary<string, string> RecentContributors { get; } = new()
+    {
+        { "FatterCat", "https://github.com/FatterCatDev" },
+    };
+
+    private Dictionary<string, string> Translators { get; } = new()
+    {
+        { "EasyBabi", "https://www.youtube.com/@EasyBabi" },
+        { "aprils148", "https://github.com/aprils148" },
+    };
+
+    private Dictionary<string, string> OtherContributors { get; } = new()
+    {
+        { "mwardrop", "https://github.com/mwardrop" },
+        { "Ati1707", "https://github.com/Ati1707" },
+        { "warxhead1", "https://github.com/warxhead1" },
+        { "Trifall", "https://github.com/Trifall" },
+        { "Blinke", "https://github.com/Blinke" },
+        { "Zalhera", "https://github.com/Zalhera" },
+        { "cmos12345", "https://github.com/cmos12345" },
+        { "kai-oswald", "https://github.com/kai-oswald" },
+        { "Arisix", "https://github.com/Arisix" },
+        { "dandrew-xx", "https://github.com/dandrew-xx" },
+        { "pobiega", "https://github.com/pobiega" },
+        { "lascoin", "https://github.com/lascoin" },
+        { "vestakip", "https://github.com/vestakip" },
+        { "PeteyPii", "https://github.com/PeteyPii" },
+    };
+
+    private Dictionary<string, string> PathOfExileCommunity { get; } = new()
+    {
+        { "Path of Exile Trade", "https://www.pathofexile.com/trade" },
+        { "FilterBlade", "https://www.filterblade.xyz/" },
+        { "poe.ninja", "https://poe.ninja/" },
+        { "poe2 Scout", "https://poe2scout.com/" },
+        { "poeprices.info", "https://www.poeprices.info/" },
+        { "Awakened PoE Trade", "https://github.com/SnosMe/awakened-poe-trade" },
+        { "Exiled Exchange 2", "https://kvan7.github.io/Exiled-Exchange-2" },
+        { "POE-TradeMacro", "https://github.com/PoE-TradeMacro/POE-TradeMacro" },
+        { "poewiki.net", "https://www.poewiki.net/" },
+        { "poedb.tw", "https://poedb.tw/us/" },
+        { "Craft of Exile", "https://www.craftofexile.com/" },
+        { "Path of Regex", "https://poe.re/" },
+        { "Chromatic Calculator", "https://siveran.github.io/calc.html" },
+    };
+
+    private Dictionary<string, string> ThirdParties { get; } = new()
+    {
+        { "FuzzySharp", "https://github.com/JakeBayer/FuzzySharp" },
+        { "Hardcodet NotifyIcon for WPF", "https://github.com/hardcodet/wpf-notifyicon" },
+        { "SharpHook", "https://github.com/TolikPylypchuk/SharpHook" },
+        { "TextCopy", "https://github.com/CopyText/TextCopy" },
+    };
+
+}

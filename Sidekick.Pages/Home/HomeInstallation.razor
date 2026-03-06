@@ -1,0 +1,130 @@
+<div id="installation" class="flex flex-col gap-6">
+    <div class="flex flex-col items-center gap-3">
+        <AppLogo/>
+        <TextBase Class="text-center">A companion application for Path of Exile and Path of Exile 2. Open an item
+            overlay to price check items, view your wealth, use chat commands, and more — without leaving the game.
+        </TextBase>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+        <ButtonPrimary Href="@WindowsSetupLink" Target="_blank">
+            Installer
+        </ButtonPrimary>
+        <ButtonSecondary Href="@WindowsPortableLink" Target="_blank">
+            Portable (Zip)
+        </ButtonSecondary>
+        <ButtonSecondary Href="@LinuxPortableLink" Target="_blank">
+            Linux (AppImage)
+        </ButtonSecondary>
+    </div>
+
+    <Card Title="Installation and Usage">
+        <div class="flex flex-col gap-4">
+            <div class="flex items-start gap-4">
+                <Heading3>1.</Heading3>
+                <div class="pt-1">
+                    Download Sidekick using either the <a href="@WindowsSetupLink" target="_blank"
+                                                          class="text-violet-400 font-bold hover:underline">installer</a>
+                    (recommended)
+                    or the <a href="@WindowsPortableLink" target="_blank"
+                              class="text-violet-400 font-bold hover:underline">portable
+                        version</a>.
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <Heading3>2.</Heading3>
+                <div class="pt-1">
+                    The installer adds Start Menu/Desktop shortcuts and launches Sidekick in your <strong>system
+                        tray</strong>.
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <Heading3>3.</Heading3>
+                <Chip>Optional</Chip>
+                <span>You may see a security prompt on first run. Sidekick is open source—our code and releases are publicly available.</span>
+            </div>
+            <div class="flex items-start gap-4">
+                <Heading3>4.</Heading3>
+                <div class="pt-1">
+                    Check your in-game display mode: set Path of Exile to <strong>Windowed</strong> or <strong>Windowed
+                        Fullscreen</strong>. Sidekick won’t work in <strong>Fullscreen</strong> mode.
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <Heading3>5.</Heading3>
+                <div class="pt-1">
+                    Have feedback or found a bug? Reach out on
+                    <a href="@DiscordLink" target="_blank"
+                       class="text-violet-400 hover:underline">Discord</a>
+                    or open an issue on
+                    <a href="https://github.com/Sidekick-Poe/Sidekick" target="_blank"
+                       class="text-violet-400 hover:underline">GitHub</a>.
+                </div>
+            </div>
+
+            <CardDivider/>
+
+            <Heading3 Class="mb-2">Uninstallation (Windows)</Heading3>
+            <TextBase>
+                Uninstall Sidekick like any other application via <strong>Windows Settings → Apps</strong>. If you want
+                a clean reset, also delete <strong>%AppData%\sidekick</strong> to remove saved settings.
+            </TextBase>
+        </div>
+    </Card>
+
+    <Card Title="Pre-requisites">
+        <TextBase Class="mb-3">These prerequisites cover the <strong>core runtime and system dependencies</strong>
+            Sidekick needs to install, launch, and display its UI correctly on each platform. We recommend installing
+            them first to ensure a smooth setup and avoid common “missing dependency” errors.
+        </TextBase>
+        <Tabs>
+            <TabPanel Title="Windows">
+                <Heading3 Class="mb-3">Windows requirements</Heading3>
+                <TextBase>
+                    The installer should automatically install the <strong>.NET 8.0 Desktop Runtime</strong> dependency,
+                    though it can fail for some users. If Sidekick fails to start, ensure you have it installed. You can
+                    download it
+                    <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0" target="_blank"
+                       class="text-violet-400 hover:underline">here</a>.
+                </TextBase>
+            </TabPanel>
+
+            <TabPanel Title="Linux">
+                <Heading3 Class="mb-3">Linux requirements</Heading3>
+                <div class="flex flex-col gap-3">
+                    <TextBase>Sidekick requires the following packages to be installed:</TextBase>
+                    <div class="flex flex-col gap-2">
+                        <div>
+                            <TextBase Class="font-bold">Arch-based</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo pacman -S --needed xsel
+                                webkit2gtk-4.1 dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Ubuntu</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo apt install xsel
+                                libwebkit2gtk-4.1-0 dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Fedora</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo dnf install xsel webkit2gtk4.1
+                                dotnet-runtime-8.0</code>
+                        </div>
+                        <div>
+                            <TextBase Class="font-bold">Download and run</TextBase>
+                            <code class="block bg-stone-900 p-2 rounded text-sm">wget
+                                https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-stable.AppImage<br/>chmod
+                                +x Sidekick-linux-stable.AppImage<br/>./Sidekick-linux-stable.AppImage</code>
+                        </div>
+                    </div>
+                </div>
+            </TabPanel>
+        </Tabs>
+    </Card>
+</div>
+
+@code {
+    private string WindowsSetupLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Setup.exe";
+    private string WindowsPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
+    private string LinuxPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-stable.AppImage";
+    private string DiscordLink = "https://discord.gg/R9HyCpV";
+}

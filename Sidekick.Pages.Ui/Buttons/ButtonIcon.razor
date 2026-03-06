@@ -1,0 +1,15 @@
+<a href="@Href"
+   target="@Target"
+   class="leading-none text-white transition-colors duration-200 hover:text-neutral-300 @UiClasses.FocusClasses">
+    @ChildContent
+</a>
+
+@code {
+
+    [Parameter] public required RenderFragment ChildContent { get; set; }
+
+    [Parameter] public required string Href { get; set; }
+
+    [Parameter] public string Target { get; set; } = "_self";
+
+}

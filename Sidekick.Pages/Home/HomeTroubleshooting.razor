@@ -1,0 +1,69 @@
+<div id="troubleshooting" class="flex flex-col gap-6">
+    <div class="text-center">
+        <Heading1>Troubleshooting</Heading1>
+    </div>
+
+    <Card>
+        <div class="flex flex-col gap-6">
+            <div>
+                <Heading3 Class="mb-1">Confirm Sidekick is running</Heading3>
+                <TextBase Class="text-neutral-400">
+                    Open Task Manager and confirm Sidekick.exe is running. If it isn’t, launch Sidekick from the Start
+                    Menu (search for Sidekick).
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Sidekick is running, but hotkeys don’t respond</Heading3>
+                <TextBase Class="text-neutral-400">
+                    If Sidekick opens but overlays/windows don’t appear, make sure <strong>Microsoft WebView2</strong>
+                    Runtime is installed. Sidekick uses <strong>WebView2</strong> to display parts of the UI. You can
+                    install it
+                    <a href="@WebView2Link" target="_blank"
+                       class="text-violet-400 hover:underline">here</a>.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Installer or auto-update fails</Heading3>
+                <TextBase Class="text-neutral-400">
+                    If the installer or auto-updater fails, try the
+                    <a
+                        href="@WindowsPortableLink" target="_blank"
+                        class="text-violet-400 hover:underline">portable (Zip) version</a> instead. It runs without
+                    installation and can help bypass installer-related issues.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Antivirus is blocking Sidekick</Heading3>
+                <TextBase Class="text-neutral-400">
+                    Check whether your antivirus has quarantined or blocked Sidekick, and allow it if you trust the app.
+                    Sidekick is open source — its code and repositories are publicly available if you’d like to review
+                    them.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Check the log files</Heading3>
+                <TextBase Class="text-neutral-400">
+                    Sidekick writes log files to <strong>%AppData%\sidekick</strong>. If something isn’t working, the
+                    logs often include the error details. You can review them yourself or share them in #support on our
+                    <a href="@DiscordLink" target="_blank"
+                       class="text-violet-400 hover:underline">Discord</a>.
+                </TextBase>
+            </div>
+            <div>
+                <Heading3 Class="mb-1">Still stuck?</Heading3>
+                <TextBase Class="text-neutral-400">
+                    If none of the steps above help, reach out on our
+                    <a href="@DiscordLink" target="_blank"
+                       class="text-violet-400 hover:underline">Discord</a> in #support — we’re happy to help you
+                    troubleshoot.
+                </TextBase>
+            </div>
+        </div>
+    </Card>
+</div>
+
+@code {
+    private string WindowsPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
+    private string WebView2Link = "https://developer.microsoft.com/en-us/microsoft-edge/webview2";
+    private string DiscordLink = "https://discord.gg/R9HyCpV";
+}
