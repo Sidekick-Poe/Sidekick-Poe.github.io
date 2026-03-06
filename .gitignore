@@ -355,3 +355,9 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 .idea/
+
+/Sidekick.Pages/wwwroot/*
+/Sidekick.Pages/wwwroot/!index.html
+/Sidekick.Pages/wwwroot/!.gitignore
+/Sidekick.Pages/wwwroot/!favicon.ico
+/Sidekick.Pages/wwwroot/!pages/
