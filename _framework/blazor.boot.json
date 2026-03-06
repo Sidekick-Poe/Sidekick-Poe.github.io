@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Sidekick.Pages",
   "resources": {
-    "hash": "sha256-fqlXftOrRxeXzzkUNZd8FCtuw/kXVzVyJcwyRIrFsSc=",
+    "hash": "sha256-HX547AxLVLeNqcgZOYYTp4ASTj+MmVoik2GaXZe+bnA=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.jqgyjnugov.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.7xv571ifm1.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -32,8 +32,8 @@
       "System.Text.Json.yttlmgnlor.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.pdieqf3n5b.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.cvjsu2yhca.wasm": "System.Private.CoreLib.wasm",
-      "Sidekick.Pages.Ui.7lw687f0a5.wasm": "Sidekick.Pages.Ui.wasm",
-      "Sidekick.Pages.943ymroetc.wasm": "Sidekick.Pages.wasm",
+      "Sidekick.Pages.Ui.i20wsw5ywk.wasm": "Sidekick.Pages.Ui.wasm",
+      "Sidekick.Pages.pc0qir3k91.wasm": "Sidekick.Pages.wasm",
       "dotnet.native.wlcpa8ji9y.js": "dotnet.native.js",
       "dotnet.native.0gx1oeq3v1.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
@@ -88,8 +88,8 @@
       "System.Text.Encodings.Web.ivx29nv26m.wasm": "sha256-AhN15vr2qWenxVjQni7HjnZWtKpofXQ2w7I1xkEL+qA=",
       "System.Text.Json.yttlmgnlor.wasm": "sha256-RlCXFidwC5cKsYjYZJRLCRvT3gomNyJhXEd16H4E0ak=",
       "System.Text.RegularExpressions.pdieqf3n5b.wasm": "sha256-jToqZYqmCZNgokuxxTcmPKCo1sb2bxH1HLzeVp3h8ck=",
-      "Sidekick.Pages.Ui.7lw687f0a5.wasm": "sha256-haGTFA0Xox+59ToejT4LDK2gbHvbPEe4V9iirwPzNiY=",
-      "Sidekick.Pages.943ymroetc.wasm": "sha256-t5m2OxZNLn2BBTexXMsaY0Ycnu1mRBczfY3vCOu7QyM="
+      "Sidekick.Pages.Ui.i20wsw5ywk.wasm": "sha256-pktHT06JXr7ODhfcLUuBciG11GTbkbCY7TdFe5AcW1g=",
+      "Sidekick.Pages.pc0qir3k91.wasm": "sha256-t6359orrIxCZpmwBo14LAxfJ2QptvifmltJbSPI//cY="
     }
   },
   "cacheBootResources": true,
