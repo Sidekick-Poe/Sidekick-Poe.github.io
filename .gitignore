@@ -361,3 +361,4 @@ MigrationBackup/
 /Sidekick.Pages/wwwroot/!.gitignore
 /Sidekick.Pages/wwwroot/!favicon.ico
 /Sidekick.Pages/wwwroot/!pages/
+/dist

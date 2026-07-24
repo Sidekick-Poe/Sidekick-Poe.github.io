@@ -1,130 +1,254 @@
+@* State Selector at the very top *@
 <div id="installation" class="flex flex-col gap-6">
     <div class="flex flex-col items-center gap-3">
         <AppLogo/>
-        <TextBase Class="text-center">A companion application for Path of Exile and Path of Exile 2. Open an item
+        <TextBase Class="text-center max-w-xl">
+            A companion application for Path of Exile and Path of Exile 2. Open an item
             overlay to price check items, view your wealth, use chat commands, and more — without leaving the game.
         </TextBase>
     </div>
 
-    <div class="flex flex-wrap items-center justify-center gap-3">
-        <ButtonPrimary Href="@WindowsSetupLink" Target="_blank">
-            Installer
-        </ButtonPrimary>
-        <ButtonSecondary Href="@WindowsPortableLink" Target="_blank">
-            Portable (Zip)
-        </ButtonSecondary>
-        <ButtonSecondary Href="@LinuxPortableLink" Target="_blank">
-            Linux (AppImage)
-        </ButtonSecondary>
+    <!-- Platform Selector Tabs -->
+    <div class="flex justify-center border-b border-stone-800 pb-2">
+        <div class="flex bg-stone-900 p-1 rounded-lg gap-1">
+            <button @onclick='() => SelectPlatform("Windows")'
+                    class="px-4 py-2 rounded-md text-sm font-medium transition-colors @(SelectedPlatform == "Windows" ? "bg-violet-600 text-white" : "text-stone-400 hover:text-white")">
+                Windows
+            </button>
+            <button @onclick='() => SelectPlatform("SteamOS")'
+                    class="px-4 py-2 rounded-md text-sm font-medium transition-colors @(SelectedPlatform == "SteamOS" ? "bg-violet-600 text-white" : "text-stone-400 hover:text-white")">
+                Steam OS
+            </button>
+            <button @onclick='() => SelectPlatform("Linux")'
+                    class="px-4 py-2 rounded-md text-sm font-medium transition-colors @(SelectedPlatform == "Linux" ? "bg-violet-600 text-white" : "text-stone-400 hover:text-white")">
+                Linux
+            </button>
+        </div>
     </div>
 
-    <Card Title="Installation and Usage">
-        <div class="flex flex-col gap-4">
-            <div class="flex items-start gap-4">
-                <Heading3>1.</Heading3>
-                <div class="pt-1">
-                    Download Sidekick using either the <a href="@WindowsSetupLink" target="_blank"
-                                                          class="text-violet-400 font-bold hover:underline">installer</a>
-                    (recommended)
-                    or the <a href="@WindowsPortableLink" target="_blank"
-                              class="text-violet-400 font-bold hover:underline">portable
-                        version</a>.
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <Heading3>2.</Heading3>
-                <div class="pt-1">
-                    The installer adds Start Menu/Desktop shortcuts and launches Sidekick in your <strong>system
-                        tray</strong>.
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <Heading3>3.</Heading3>
-                <Chip>Optional</Chip>
-                <span>You may see a security prompt on first run. Sidekick is open source—our code and releases are publicly available.</span>
-            </div>
-            <div class="flex items-start gap-4">
-                <Heading3>4.</Heading3>
-                <div class="pt-1">
-                    Check your in-game display mode: set Path of Exile to <strong>Windowed</strong> or <strong>Windowed
-                        Fullscreen</strong>. Sidekick won’t work in <strong>Fullscreen</strong> mode.
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <Heading3>5.</Heading3>
-                <div class="pt-1">
-                    Have feedback or found a bug? Reach out on
-                    <a href="@DiscordLink" target="_blank"
-                       class="text-violet-400 hover:underline">Discord</a>
-                    or open an issue on
-                    <a href="https://github.com/Sidekick-Poe/Sidekick" target="_blank"
-                       class="text-violet-400 hover:underline">GitHub</a>.
-                </div>
-            </div>
-
-            <CardDivider/>
-
-            <Heading3 Class="mb-2">Uninstallation (Windows)</Heading3>
-            <TextBase>
-                Uninstall Sidekick like any other application via <strong>Windows Settings → Apps</strong>. If you want
-                a clean reset, also delete <strong>%AppData%\sidekick</strong> to remove saved settings.
-            </TextBase>
+    <!-- Contextual Downloads based on OS Selection -->
+    <div class="flex flex-col items-center gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-3">
+            @if (SelectedPlatform == "Windows")
+            {
+                <ButtonPrimary Href="@WindowsSetupLink" Target="_blank">
+                    Installer
+                </ButtonPrimary>
+                <ButtonSecondary Href="@WindowsPortableLink" Target="_blank">
+                    Portable Zip
+                </ButtonSecondary>
+                <ButtonSecondary Href="@WindowsWebLink" Target="_blank">
+                    Web Browser Version
+                </ButtonSecondary>
+            }
+            else if (SelectedPlatform == "SteamOS" || SelectedPlatform == "Linux")
+            {
+                <ButtonPrimary Href="@LinuxPortableLink" Target="_blank">
+                    Linux AppImage
+                </ButtonPrimary>
+                <ButtonSecondary Href="@LinuxWebLink" Target="_blank">
+                    Web Browser Version
+                </ButtonSecondary>
+            }
         </div>
-    </Card>
+    </div>
 
-    <Card Title="Pre-requisites">
-        <TextBase Class="mb-3">These prerequisites cover the <strong>core runtime and system dependencies</strong>
-            Sidekick needs to install, launch, and display its UI correctly on each platform. We recommend installing
-            them first to ensure a smooth setup and avoid common “missing dependency” errors.
-        </TextBase>
-        <Tabs>
-            <TabPanel Title="Windows">
-                <Heading3 Class="mb-3">Windows requirements</Heading3>
-                <TextBase>
-                    The installer should automatically install the <strong>.NET 8.0 Desktop Runtime</strong> dependency,
-                    though it can fail for some users. If Sidekick fails to start, ensure you have it installed. You can
-                    download it
-                    <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0" target="_blank"
-                       class="text-violet-400 hover:underline">here</a>.
-                </TextBase>
-            </TabPanel>
-
-            <TabPanel Title="Linux">
-                <Heading3 Class="mb-3">Linux requirements</Heading3>
-                <div class="flex flex-col gap-3">
-                    <TextBase>Sidekick requires the following packages to be installed:</TextBase>
-                    <div class="flex flex-col gap-2">
-                        <div>
-                            <TextBase Class="font-bold">Arch-based</TextBase>
-                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo pacman -S --needed xsel
-                                webkit2gtk-4.1 dotnet-runtime-8.0</code>
-                        </div>
-                        <div>
-                            <TextBase Class="font-bold">Ubuntu</TextBase>
-                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo apt install xsel
-                                libwebkit2gtk-4.1-0 dotnet-runtime-8.0</code>
-                        </div>
-                        <div>
-                            <TextBase Class="font-bold">Fedora</TextBase>
-                            <code class="block bg-stone-900 p-2 rounded text-sm">sudo dnf install xsel webkit2gtk4.1
-                                dotnet-runtime-8.0</code>
-                        </div>
-                        <div>
-                            <TextBase Class="font-bold">Download and run</TextBase>
-                            <code class="block bg-stone-900 p-2 rounded text-sm">wget
-                                https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-stable.AppImage<br/>chmod
-                                +x Sidekick-linux-stable.AppImage<br/>./Sidekick-linux-stable.AppImage</code>
-                        </div>
+    <!-- Contextual Installation Steps & Requirements based on OS Selection -->
+    @if (SelectedPlatform == "Windows")
+    {
+        <Card Title="Windows Setup & Usage">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <Heading3>1.</Heading3>
+                    <div>
+                        Download Sidekick using either the <a href="@WindowsSetupLink" target="_blank"
+                                                              class="text-violet-400 font-bold hover:underline">installer</a>
+                        (recommended) or the <a href="@WindowsPortableLink" target="_blank"
+                                                class="text-violet-400 font-bold hover:underline">portable version</a>.
                     </div>
                 </div>
-            </TabPanel>
-        </Tabs>
-    </Card>
+                <div class="flex items-center gap-4">
+                    <Heading3>2.</Heading3>
+                    <div>
+                        The installer adds Start Menu/Desktop shortcuts and launches Sidekick in your <strong>system
+                            tray</strong>.
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>3.</Heading3>
+                    <div class="flex items-center gap-2">
+                        <Chip>Optional</Chip>
+                        <span>You may see a security prompt on first run. Sidekick is open source—our code and releases are publicly available.</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>4.</Heading3>
+                    <div>
+                        Check your in-game display mode: set Path of Exile to <strong>Windowed</strong> or <strong>Windowed
+                            Fullscreen</strong>. Sidekick won’t work in <strong>Fullscreen</strong> mode.
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>5.</Heading3>
+                    <div>
+                        If the app fails to start, make sure you have the <strong>.NET 8.0 Desktop Runtime</strong>
+                        installed. You can download it <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0"
+                                                          target="_blank"
+                                                          class="text-violet-400 hover:underline">here</a>.
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>6.</Heading3>
+                    <div>
+                        Have feedback or found a bug? Reach out on
+                        <a href="@DiscordLink" target="_blank" class="text-violet-400 hover:underline">Discord</a>
+                        or open an issue on
+                        <a href="https://github.com/Sidekick-Poe/Sidekick" target="_blank"
+                           class="text-violet-400 hover:underline">GitHub</a>.
+                    </div>
+                </div>
+
+                <CardDivider/>
+
+                <Heading3 Class="mb-2">Uninstallation</Heading3>
+                <TextBase>
+                    Uninstall Sidekick via <strong>Windows Settings → Apps</strong>. If you want a clean reset, also
+                    delete <strong>%AppData%\sidekick</strong> to remove saved settings.
+                </TextBase>
+            </div>
+        </Card>
+    }
+    else if (SelectedPlatform == "SteamOS")
+    {
+        <Card Title="Steam OS Setup">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <Heading3>1.</Heading3>
+                    <div class="flex-1">Because Steam OS uses a locked, read-only system partition by default, a few
+                        quick setup steps are required before launching the AppImage.
+                        <span class="font-semibold text-white">Tip:</span>
+                        If you have already set up a terminal password, unlocked read-only mode, or initialized your
+                        keyring in the past, you can skip those steps.
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>2.</Heading3>
+                    <div class="flex-1">
+                        <span>Enter <strong>Desktop Mode</strong> (Press the Steam button &gt; Power &gt; Switch to Desktop).</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>3.</Heading3>
+                    <div class="flex-1">
+                        <span>Open the <strong>Konsole</strong> terminal app.</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>4.</Heading3>
+                    <div class="flex-1">
+                        <span>Ensure you have an admin (sudo) password set up by running:</span>
+                        <code class="block bg-stone-900 p-2 mt-1 rounded text-sm font-mono">passwd</code>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>5.</Heading3>
+                    <div class="flex-1">
+                        <span>Disable the read-only file system:</span>
+                        <code class="block bg-stone-900 p-2 mt-1 rounded text-sm font-mono">sudo steamos-readonly
+                            disable</code>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>6.</Heading3>
+                    <div class="flex-1">
+                        <span>Initialize the Pacman Keyring:</span>
+                        <code class="block bg-stone-900 p-2 mt-1 rounded text-sm font-mono">sudo pacman-key
+                            --init</code>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>7.</Heading3>
+                    <div class="flex-1">
+                        <span>Populate the Arch Linux and SteamOS (Holo) keyrings to avoid "unknown trust" errors:</span>
+                        <code class="block bg-stone-900 p-2 mt-1 rounded text-sm font-mono">sudo pacman-key --populate archlinux holo</code>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>8.</Heading3>
+                    <div class="flex-1">
+                        <span>Install the required prerequisites:</span>
+                        <code class="block bg-stone-900 p-2 mt-1 rounded text-sm font-mono">sudo pacman -S --needed xsel
+                            webkit2gtk-4.1</code>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>9.</Heading3>
+                    <span>Download the <a href="@LinuxPortableLink" target="_blank"
+                                          class="text-violet-400 font-bold hover:underline">Linux AppImage</a> and save it to your desktop or an easily accessible folder.</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <Heading3>10.</Heading3>
+                    <div class="flex-1">
+                        <span>Right-click your downloaded <code>Sidekick-linux-stable.AppImage</code> file, go to <strong>Properties → Permissions</strong>, and check <strong>Is Executable</strong>. Double-click the file to launch Sidekick!</span>
+                    </div>
+                </div>
+            </div>
+        </Card>
+    }
+    else if (SelectedPlatform == "Linux")
+    {
+        <Card Title="Linux Installation & Requirements">
+            <div class="flex flex-col gap-4">
+                <TextBase>Install the required system dependency packages via your distribution's package manager,
+                    make the AppImage executable, and run it.
+                </TextBase>
+
+                <div class="flex flex-col gap-4">
+                    <div>
+                        <TextBase Class="font-bold block mb-1">Arch-based</TextBase>
+                        <code class="block bg-stone-900 p-2 rounded text-sm font-mono">sudo pacman -S --needed xsel
+                            webkit2gtk-4.1</code>
+                    </div>
+                    <div>
+                        <TextBase Class="font-bold block mb-1">Ubuntu / Debian</TextBase>
+                        <code class="block bg-stone-900 p-2 rounded text-sm font-mono">sudo apt install xsel
+                            libwebkit2gtk-4.1-0</code>
+                    </div>
+                    <div>
+                        <TextBase Class="font-bold block mb-1">Fedora</TextBase>
+                        <code class="block bg-stone-900 p-2 rounded text-sm font-mono">sudo dnf install xsel
+                            webkit2gtk-4.1</code>
+                    </div>
+                </div>
+
+                <CardDivider/>
+
+                <Heading3 Class="mb-1">Quick Terminal Setup (Alternative)</Heading3>
+                <TextBase class="text-sm text-stone-400">If you prefer downloading and running the AppImage directly
+                    from the command line:
+                </TextBase>
+                <code
+                    class="block bg-stone-900 p-2 rounded text-sm font-mono whitespace-pre-line">wget @LinuxPortableLink
+                    chmod +x Sidekick-linux-stable.AppImage
+                    ./Sidekick-linux-stable.AppImage</code>
+            </div>
+        </Card>
+    }
 </div>
 
 @code {
-    private string WindowsSetupLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Setup.exe";
-    private string WindowsPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-stable-Portable.zip";
-    private string LinuxPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-stable.AppImage";
-    private string DiscordLink = "https://discord.gg/R9HyCpV";
+    private const string WindowsSetupLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-x64-Setup.exe";
+    private const string WindowsPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-x64-Portable.zip";
+    private const string WindowsWebLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-windows-web-x64-Setup.zip";
+    private const string LinuxPortableLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-x64.AppImage";
+    private const string LinuxWebLink = "https://github.com/Sidekick-Poe/Sidekick/releases/latest/download/Sidekick-linux-web-x64.AppImage";
+    private const string DiscordLink = "https://discord.gg/R9HyCpV";
+
+    private string SelectedPlatform { get; set; } = "Windows";
+
+    private void SelectPlatform(string platform)
+    {
+        SelectedPlatform = platform;
+    }
+
 }
